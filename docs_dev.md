@@ -2,7 +2,7 @@
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}  
 
-[Back to documentation](docs_overview.html)
+[Back to documentation](index.html)
 
 The Developer Documentation is aimed at software developers who want to: extend Marxan Web with new features; create new websites from the data or want to use desktop GIS tools to link directly to the Marxan Web database. Each of these topics is described below.  
 

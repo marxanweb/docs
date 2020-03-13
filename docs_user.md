@@ -2,7 +2,7 @@
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}  
 
-[Back to documentation](docs_overview.html)
+[Back to documentation](index.html)
 
 Marxan Web is a decision-support platform for doing Systematic Conservation Planning over the web and for sharing the results amongst stakeholders and the conservation community. It builds upon the existing Marxan software and offers the following new features and benefits:  
 
