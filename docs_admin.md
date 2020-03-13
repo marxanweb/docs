@@ -63,7 +63,7 @@ These files are described in the following sections.
 The server.dat file contains settings that apply at the server level. These settings are described in the following sections. If any of the settings in the server.dat file are changed, then the marxan-server will need to be restarted for those changes to take effect. For more information see [Starting/stopping marxan-server](#startingstopping-marxan-server).  
 
 ##### ENABLE_GUEST_USER 
-This value is set using the Marxan Web application but it can also be set directly in the server.dat file. For more information see [User Guide - Enabling Guest Users](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#enabling-guest-users-admin-users-only).  
+This value is set using the Marxan Web application but it can also be set directly in the server.dat file. For more information see [User Guide - Enabling Guest Users](docs_user.html#enabling-guest-users-admin-users-only).  
 
 ##### SERVER_NAME 
 If this instance of marxan-server has been registered in the Marxan Registry, then you can set this value to override the server name that is in the Marxan Registry. This name will appear in the list of Marxan Servers when the login page is shown in Marxan Web.  

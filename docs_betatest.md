@@ -14,7 +14,7 @@ Marxan Web is available as a hosted service (i.e. where no software installation
 1. Follow the instructions  
 
 ## Bugs and feature requests
-There will be bugs! Please report any bugs to the Marxan Web repository on GitHub by following the instructions in the [User Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#providing-feedback). In order to help fix bugs the following information would be really helpful:
+There will be bugs! Please report any bugs to the Marxan Web repository on GitHub by following the instructions in the [User Guide](docs_user.html#providing-feedback). In order to help fix bugs the following information would be really helpful:
 
 - The software that you are testing and on what browser.  
 - A detailed step-by-step set of instructions to reproduce the bug.  
@@ -22,7 +22,7 @@ There will be bugs! Please report any bugs to the Marxan Web repository on GitHu
 
 There are some known bugs in the underlying DOS-based Marxan software which will be addressed before the full release of Marxan Web.  
 
-For feature requests, please also add them as issues in the Marxan Web repository on GitHub by following the instructions in the [User Guide](https://andrewcottam.github.io/marxan-web/documentation/docs_user.html#providing-feedback).
+For feature requests, please also add them as issues in the Marxan Web repository on GitHub by following the instructions in the [User Guide](docs_user.html#providing-feedback).
 
 ## Notes 
 - All data that is uploaded in the Beta testing programme will be in the public domain and will be deleted at the end of the programme. Please don't upload any sensitive or unlicensed data.  
