@@ -54,7 +54,7 @@ Finally, the mapping data itself is delivered through Vector Tiles that are sour
 ## marxan-server development
 This section provides a quick guide to getting going in extending the marxan-server software.  
 
-Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/andrewcottam/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server repo](https://github.com/andrewcottam/marxan-server).  
+Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/marxanweb/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server repo](https://github.com/marxanweb/marxan-server).  
 
 Now that repo is forked you can edit the marxan-server.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
@@ -121,7 +121,7 @@ To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There
 ## marxan-client development
 The marxan-client software is developed using the React Framework from Facebook and was created using the create-react-app tool. This is a nodejs package that contains a development server, tools for rapidly creating user interfaces and compiling and building the code for  production. In order to develop and extend marxan-client, use the following steps:  
 
-- Fork the [repo](https://github.com/andrewcottam/marxan-client) and clone it to a development machine
+- Fork the [repo](https://github.com/marxanweb/marxan-client) and clone it to a development machine
 - Change to the marxan-client folder and run npm install to install all of the nodejs dependencies
 
 ```

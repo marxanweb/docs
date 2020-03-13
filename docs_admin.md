@@ -10,7 +10,7 @@ This documentation is aimed at IT staff within organisations who wish to host an
 The Marxan Web software comprises a set of discrete components that work together in a network to provide the tools to do systematic conservation planning. This section outlines how these components work together and what the options are for deploying and using Marxan Web in your organisation.  
 
 ### Client/server
-Marxan Web comprises software running on a server ([marxan-server](https://github.com/andrewcottam/marxan-server)) and software running on the client ([marxan-client](https://github.com/andrewcottam/marxan-client)). These two separate bits of software work together in a loosely-coupled way through web services with the marxan-server providing the data storage and processing layer and marxan-client providing the user interface to that content (running in a browser). For more information on the architecture for each of these bits of software, see the relevant GitHub repos.  
+Marxan Web comprises software running on a server ([marxan-server](https://github.com/marxanweb/marxan-server)) and software running on the client ([marxan-client](https://github.com/marxanweb/marxan-client)). These two separate bits of software work together in a loosely-coupled way through web services with the marxan-server providing the data storage and processing layer and marxan-client providing the user interface to that content (running in a browser). For more information on the architecture for each of these bits of software, see the relevant GitHub repos.  
 
 These two separate components can be installed on a local, network or cloud-based machine, either on the same machine or on different machines. These different options are shown in the following sections.  
 
@@ -27,7 +27,7 @@ Wherever Marxan Web is installed, when it is run the login screen shows a list o
 Marxan Web is cross-platform which means that it will install and run on any operating system (although there may be some slight differences in the support on different platforms). Instructions for installing on different operating systems are given below.  
 
 ### Windows
-A Windows installer is available for installing Marxan Web on Windows and is available from the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page. Once downloaded, when you run the installer you can choose whether to install Marxan Web with a new PostGIS database or use an existing one:
+A Windows installer is available for installing Marxan Web on Windows and is available from the [Windows Releases](https://github.com/marxanweb/marxan-web/releases){:target="_blank"} page. Once downloaded, when you run the installer you can choose whether to install Marxan Web with a new PostGIS database or use an existing one:
 
 <img src='images/install.png' title='Windows Installer' class='docsImage'>
 
@@ -39,10 +39,10 @@ Once the installation has completed, you can run Marxan Web from the Start Menu:
 
 <img src='images/startmenu.png' title='Windows Start Menu' class='docsImage'>
 
-For uninstall information, see the [Windows Releases](https://github.com/andrewcottam/marxan-web/releases){:target="_blank"} page.
+For uninstall information, see the [Windows Releases](https://github.com/marxanweb/marxan-web/releases){:target="_blank"} page.
 
 ### Unix
-marxan-server and marxan-client have to be installed separately on Unix operating systems. For more information on installing these, see the relevant GitHub repos: [marxan-server](https://github.com/andrewcottam/marxan-server) and [marxan-client](https://github.com/andrewcottam/marxan-client).  
+marxan-server and marxan-client have to be installed separately on Unix operating systems. For more information on installing these, see the relevant GitHub repos: [marxan-server](https://github.com/marxanweb/marxan-server) and [marxan-client](https://github.com/marxanweb/marxan-client).  
 
 ### Mac
 The installation of Marxan Web on Mac operating systems has not been done yet as there are some issues with installing PostGIS which is a prerequisite of marxan-server.  
