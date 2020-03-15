@@ -54,7 +54,7 @@ Finally, the mapping data itself is delivered through Vector Tiles that are sour
 ## marxan-server development
 This section provides a quick guide to getting going in extending the marxan-server software.  
 
-Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo in order that you can make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/marxanweb/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server repo](https://github.com/marxanweb/marxan-server).  
+Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo to be able to make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/marxanweb/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server](https://github.com/marxanweb/marxan-server) repo.  
 
 Now that repo is forked you can edit the marxan-server.py file to add your own extensions using your favorite Integrated Development Environment (IDE). Methods for extending marxan-server are described in the following sections.  
 
