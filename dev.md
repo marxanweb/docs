@@ -109,9 +109,9 @@ In addition, new features and planning grids will each have a respective new rec
 
 There are three other tables in PostGIS that are used by marxan-server to create new planning grids (either marine or terrestrial): 
 
-- eez_simplified_1km Contains the marine extent of all countries in the world  
-- gaul_2015_simplified_1km  Contains the country boundaries of the world
-- gaul_eez_dissolved Contains the union of the marine and terrestrial extents for all countries in the world
+- eez_simplified_1km - Contains the marine extent of all countries in the world  
+- gaul_2015_simplified_1km - Contains the country boundaries of the world
+- gaul_eez_dissolved - Contains the union of the marine and terrestrial extents for all countries in the world
 
 To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc. This class is available through the singleton object called pg which maintains a pool of asynchronous database connections.   
 
