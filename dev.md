@@ -100,10 +100,10 @@ When you are in the process of developing new REST services it is more convenien
 ### Interacting with PostGIS
 PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with the following letters (these tables will be stored in the WGS84 coordinate system, EPSG:4326):  
 
-- f_    Features  
-- fs_   Features that were imported and split on a field name  
-- gbif_ Features imported from GBIF  
-- pu_   Planning units  
+- f_ - Features  
+- fs_ - Features that were imported and split on a field name  
+- gbif_ - Features imported from GBIF  
+- pu_ - Planning units  
 
 In addition, new features and planning grids will each have a respective new record in the 'metadata_planning_units' or 'metadata_interest_features' tables. These tables are used to capture the metadata for these entities.  
 
@@ -113,7 +113,7 @@ There are three other tables in PostGIS that are used by marxan-server to create
 - gaul_2015_simplified_1km  Contains the country boundaries of the world
 - gaul_eez_dissolved Contains the union of the marine and terrestrial extents for all countries in the world
 
-To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc.  
+To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc. This class is available through the singleton object called pg which maintains a pool of asynchronous database connections.   
 
 ### Interacting with Mapbox
 All new features and planning grids that are created in marxan-server have to be uploaded to Mapbox to enable visualisation on the map - and the unique identifiers created in marxan-server are used to uniquely identify those tilesets in Mapbox. There are some convenience classes and methods for interacting with Mapbox in marxan-server including: _uploadTilesetToMapbox, _uploadTileset and _deleteTileset.  
@@ -121,7 +121,15 @@ All new features and planning grids that are created in marxan-server have to be
 ### Creating WebSocket extensions
 For most purposes in marxan-server, creating extensions by creating new REST services should be sufficient. However, for more long-running or complex extensions WebSockets should be used. WebSockets provide a mechanism for communication between marxan-client and marxan-server that is stateful and persistent so messages can be sent back and forth at regular intervals. The marxan-client uses WebSocket classes to update the Log tab in Marxan Web with information on the progress of long-running jobs, e.g. a Marxan run or the import of an existing Marxan project. 
 
-To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There are already two example subclasses of the MarxanWebSocketHandler class: runMarxan (for running Marxan jobs) and QueryWebSocketHandler (for running PostGIS queries). Follow these example classes to create your own WebSocket extensions.  
+To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There are already a few example subclasses of the MarxanWebSocketHandler class:  
+
+- runMarxan - For running Marxan jobs  
+- QueryWebSocketHandler - For running PostGIS queries  
+- importFeatures - For importing features  
+- importGBIFData - For importing GBIF data  
+- updateWDPA - For updating the World Database of Protected Areas  
+
+Follow these example classes to create your own WebSocket extensions.  
 
 ## marxan-client development
 The marxan-client software is developed using the React Framework from Facebook and was created using the create-react-app tool. This is a nodejs package that contains a development server, tools for rapidly creating user interfaces and compiling and building the code for  production. In order to develop and extend marxan-client, use the following steps:  
@@ -152,6 +160,13 @@ This will create a compiled and minified version of your code that can be deploy
 
 ### Deploying
 Your built application can be deployed simply by hosting the build folder on a suitable web server. If you want your new features to be available in other marxan-client deployments, then submit a pull request to the main marxan-client repo.  
+
+The simplest way to deploy is to use host the built files on GitHub pages on GitHub. Follow the instructions [here](https://create-react-app.dev/docs/deployment/#github-pages) and then use the following command:  
+
+```
+npm run deploy
+```
+
 
 ## Building new user interfaces on Marxan data
 ### marxan-server API
