@@ -49,7 +49,7 @@ Another technology that is used in the marxan-client software is Mapbox mapping 
 
 The most important of these is the performance: the MapboxGL technology means that the non-spatial results that Marxan produces (i.e. a csv file with hundreds of thousands of rows with lots of numbers in) can be mapped on-the-fly in the client. This cannot be achieved with conventional web GIS. 
 
-Finally, the mapping data itself is delivered through Vector Tiles that are sourced from Mapbox (and other providers in the future). These Vector Tiles are based on OpenStreetMap data and all of the feature attributes are sent to the browser with the spatial data meaning that they can be styled and queried on-the-fly in the browser.  
+Finally, the mapping data itself is delivered through Vector Tiles that are sourced from Mapbox and ESRI (and other providers in the future). These Vector Tiles are based on OpenStreetMap data and all of the feature attributes are sent to the browser with the spatial data meaning that they can be styled and queried on-the-fly in the browser.  
 
 ## marxan-server development
 This section provides a quick guide to getting going in extending the marxan-server software.  
