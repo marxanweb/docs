@@ -98,11 +98,20 @@ The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictiona
 When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, set the DISABLE_SECURITY to True and this disables all security (including CORS restrictions). At the end of the development process, make sure that you control access properly to the service.  
 
 ### Interacting with PostGIS
-PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with an 'f_' (for features) and 'pu_' (for planning units). Each of these tables will be projected in an equal area projection (EPSG:3410).  
+PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with the following letters (these tables will be stored in the WGS84 coordinate system, EPSG:4326):  
+
+- f_    Features  
+- fs_   Features that were imported and split on a field name  
+- gbif_ Features imported from GBIF  
+- pu_   Planning units  
 
 In addition, new features and planning grids will each have a respective new record in the 'metadata_planning_units' or 'metadata_interest_features' tables. These tables are used to capture the metadata for these entities.  
 
-There are two other tables in PostGIS that are used by marxan-server to create new planning grids (either marine or terrestrial): eez_simplified_1km - which contains the marine extent of all countries in the world and gaul_2015_simplified_1km - which contains the country boundaries of the world.  
+There are three other tables in PostGIS that are used by marxan-server to create new planning grids (either marine or terrestrial): 
+
+- eez_simplified_1km Contains the marine extent of all countries in the world  
+- gaul_2015_simplified_1km  Contains the country boundaries of the world
+- gaul_eez_dissolved Contains the union of the marine and terrestrial extents for all countries in the world
 
 To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc.  
 
