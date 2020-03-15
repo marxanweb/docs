@@ -95,11 +95,7 @@ When you have finished developing your new REST service, make sure that you cont
 The marxan-client uses the information in the ROLE_UNAUTHORISED_METHODS dictionary firstly to show/hide relevant user interface components and secondly to physically stop any unauthorised access to a service based on the currently logged on users role.  
 
 #### Testing new REST services
-When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, add your Python class name to the PERMITTED_METHODS list at the top of the marxan-server.py module. Any service in this list can be accessed from a simple url without having to authenticate or check authorisation. At the end of the development process, make sure that you control access properly to the service.  
-
-```
-PERMITTED_METHODS = ["getServerData","createUser","validateUser".. etc]    
-```
+When you are in the process of developing new REST services it is more convenient not to have to worry about controlled access to services and authentication and just to be able to get on with developing and testing those new services. To do this, set the DISABLE_SECURITY to True and this disables all security (including CORS restrictions). At the end of the development process, make sure that you control access properly to the service.  
 
 ### Interacting with PostGIS
 PostGIS is used by marxan-server to manage all features and planning grids and there are a set of methods for creating and deleting those entities. All new features and planning units that are created in Marxan Web will be created as tables in the marxan schema with a globally unique identifier prefixed with an 'f_' (for features) and 'pu_' (for planning units). Each of these tables will be projected in an equal area projection (EPSG:3410).  
