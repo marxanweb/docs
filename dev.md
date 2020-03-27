@@ -161,7 +161,7 @@ This will create a compiled and minified version of your code that can be deploy
 ### Deploying
 Your built application can be deployed simply by hosting the build folder on a suitable web server. If you want your new features to be available in other marxan-client deployments, then submit a pull request to the main marxan-client repo.  
 
-The simplest way to deploy is to use host the built files on GitHub pages on GitHub. Follow the instructions [here](https://create-react-app.dev/docs/deployment/#github-pages) and then use the following command:  
+The simplest way to deploy is to host the built files on GitHub pages on GitHub. Follow the instructions [here](https://create-react-app.dev/docs/deployment/#github-pages) and then use the following command:  
 
 ```
 npm run deploy
