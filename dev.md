@@ -135,7 +135,7 @@ Follow these example classes to create your own WebSocket extensions.
 The marxan-client software is developed using the React Framework from Facebook and was created using the create-react-app tool. This is a nodejs package that contains a development server, tools for rapidly creating user interfaces and compiling and building the code for  production. In order to develop and extend marxan-client, use the following steps:  
 
 - Fork the [repo](https://github.com/marxanweb/marxan-client) and clone it to a development machine
-- Change to the marxan-client folder and run npm install to install all of the nodejs dependencies
+- Change to the marxan-client folder and run npm install to install all of the nodejs dependencies (make sure you have the latest version of nodejs and npm installed)  
 
 ```
 cd marxan-client
