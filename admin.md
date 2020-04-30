@@ -97,6 +97,12 @@ This is a text string that contains the version date for the WDPA that is includ
 ##### PLANNING_GRID_UNITS_LIMIT
 When creating planning grids, this is the threshold for the number of planning grid units that can be created. If there are more than this number, then an error message will be returned to the client.  
 
+##### DISABLE_SECURITY  
+Setting this to True will disable all security on the server. This can be useful for testing.  
+
+##### DISABLE_FILE_LOGGING
+Set to True to disable all logging to file.  
+
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
 
@@ -131,7 +137,7 @@ Authentication between marxan-client and marxan-server is done using secure cook
 To prevent Cross-Origin Resource Sharing vulnerabilities, by default marxan-server only allows read-write access from those domains that are listed in the PERMITTED_DOMAINS value in the server.dat file. All other domains will only have read-only access. See [PERMITTED_DOMAINS](#permitted_domains) for more information.  
 
 #### Disabling security
-To disable all security in marxan-server, set the DISABLE_SECURITY constant in the marxan-server.py file to True and restart marxan-server. All services will now be available without any requirement for authentication.  
+To disable all security in marxan-server, set the DISABLE_SECURITY constant in the server.dat file to True. All services will now be available without any requirement for authentication. See [DISABLE_SECURITY](#disable_security) for more information.    
 
 #### Admin user password
 By default the admin user has the password 'password' which should be changed before the server is made available to any Marxan Web clients. This can be done using the Change Password window - for more information see [User Guide - Change Password window](user.html#change-password).  
