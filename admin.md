@@ -151,10 +151,12 @@ marxan-server logs all requests and exceptions to a number of loggers. By defaul
 Logs can also be written to [Google Cloud Logging](https://cloud.google.com/logging/docs) and viewed online from the Google Cloud Console Logging screen. To set up Google Cloud Logging:  
 - Create a service account that has a Log writer role
 - Download the service account key onto the Google Cloud Platform Virtual Machine
-- Edit the /etc/profile.d/marxan-server.sh file and add the following text replacing PATH with the path to the downloaded \*.json key:
+- Edit the /etc/profile.d/marxan-server.sh file and add the following text replacing PATH with the path to the downloaded \*.json key:  
+
 ```
 export GOOGLE_APPLICATION_CREDENTIALS="<PATH>" 
-```
+```  
+
 - Restart marxan-server  
 
 ## Maintenance
