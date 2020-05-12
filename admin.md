@@ -149,6 +149,7 @@ To configure you own database to use with marxan-server, set the appropriate set
 marxan-server logs all requests and exceptions to a number of loggers. By default logs are written to the console and to the marxan-server.log file. To disable logging set the [DISABLE_FILE_LOGGING](#disable_file_logging) setting.  
 
 Logs can also be written to [Google Cloud Logging](https://cloud.google.com/logging/docs) and viewed online from the Google Cloud Console Logging screen. To set up Google Cloud Logging:  
+- Set the value of SERVER_NAME parameter - this is shown in the Google Cloud Logging logs to identify where the log has come from  
 - Create a service account that has a Log writer role
 - Download the service account key onto the Google Cloud Platform Virtual Machine
 - Edit the /etc/profile.d/marxan-server.sh file and add the following text replacing PATH with the path to the downloaded \*.json key:  
