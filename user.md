@@ -269,6 +269,9 @@ In the first step of the wizard, upload a zipped shapefile which contains the fe
 
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
+##### Importing from web  
+Features can also be imported from common web formats such as Web Feature Services. In the first step of the wizard, select the type of web resource and click next. In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. When the GetCapabilities resource has been loaded click next. Select the feature type from the list of available feature types and click next. Enter a name and description for the feature that will be created.  
+
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
 - In the Features window click on New and Draw on screen   
