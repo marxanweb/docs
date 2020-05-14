@@ -270,7 +270,12 @@ In the first step of the wizard, upload a zipped shapefile which contains the fe
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Importing from web  
-Features can also be imported from common web formats such as Web Feature Services. In the first step of the wizard, select the type of web resource and click next. In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. When the GetCapabilities resource has been loaded click next. Select the feature type from the list of available feature types and click next. Enter a name and description for the feature that will be created.  
+Features can also be imported from common web formats such as Web Feature Services. In the first step of the wizard, select the type of web resource and click next. In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. For example, the following WFS endpoint can be used to import Crane data [Harris <i>et al</i>, 2019](#references)):  
+```
+https://dservices2.arcgis.com/7p8XMQ9sy7kJZN4K/arcgis/services/Cranes_Species_Ranges/WFSServer?service=wfs&request=getcapabilities
+```
+
+When the GetCapabilities resource has been loaded click next. Select the feature type from the list of available feature types and click next. Enter a name and description for the feature that will be created. 
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
@@ -535,6 +540,8 @@ The About window provides information on the versions of software that are being
 Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. <i>Metrics for evaluating representation target achievement in protected area networks. Divers Distrib</i>. 2019; 25: 170– 175. [https://doi.org/10.1111/ddi.12853](https://doi.org/10.1111/ddi.12853){:target="_blank"}
 
 Rodrigues, Ana & Akcakaya, H. Resit & Andelman, Sandy & Bakarr, Mohamed & Boitani, Luigi & Brooks, Thomas & Chanson, Janice & Fishpool, Lincoln & Fonseca, Gustavo & Gaston, Kevin & Hoffmann, Michael & Marquet, Pablo & Pilgrim, John & Pressey, Robert & Schipper, Jan & Sechrest, Wes & Stuart, Simon & Underhill, Leslie & Waller, Robert & Xie, Yan. (2004). <i>Global Gap Analysis: Priority Regions for Expanding the Global Protected-Area Network</i>. BioScience. 54. 10.1641/0006-3568(2004)054[1092:GGAPRF]2.0.CO;2. 
+
+Harris J, Mirande C, editors. 2019 Crane Conservation Strategy. International Crane Foundation, Baraboo, Wisconsin.  
 
 ## Providing Feedback
 Please provide any feature requests or bug reports to the [GitHub repo](https://github.com/marxanweb/marxan-web) by creating a new issue.  
