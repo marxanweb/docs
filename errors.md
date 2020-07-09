@@ -38,3 +38,6 @@ No response was received from the server. This may be due to a number of reasons
 
 ## Number of planning units exceeds the threshold
 When creating a new planning grid for a country, there are limits on the number of planning units that can be created. By default this is 100,000 units. If the estimated number of planning units will exceed this number then this error is raised. The threshold for the number of planning units can be set by the system Administrator. For more information see [PLANNING_GRID_UNITS_LIMIT](admin.html#planning_grid_units_limit).  
+
+## No intersections between the protected areas and planning grid
+The planning grid is intersected with the protected areas from the World Database of Protected Areas so that the existing protected area network can be locked into a plan. This error occurs during the intersection analysis when no planning units intersect no protected areas. There are a number of reasons this can occur including the planning grid occurring in an area with no WDPA data. 
