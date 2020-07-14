@@ -80,13 +80,9 @@ To create a new project using the New Project wizard:
 
 <img src='images/window_new_project_02.png' title='New project step 2' class='docsImage'>
 
-- Choose the conservation features that will be part of your project
+- Choose the conservation features that will be part of your project and click Finish  
 
 <img src='images/window_new_project_03.png' title='New project step 3' class='docsImage'>
-
-- Select a cost surface (not currently implemented) and click Finish  
-
-<img src='images/window_new_project_04.png' title='New project step 4' class='docsImage'>
 
 The project will now be created and opened and can be run immediately.  
 
@@ -295,7 +291,7 @@ Adding features from the IUCN Red List will also be made available in future ver
 #### Deleting features
 Deleting features is only possible as an admin user and then only when the features are not in use in any projects and they are not system supplied. System supplied features are ones that are used in case studies and tutorials and therefore cannot be deleted. If the features are in use, then a window will list all of the projects where they are being used.  
 
-<img src='images/failed_to_delete_feature.png' title='Failed to delete feature' class='docsImage'>
+<img src='images/window_failed_to_delete_01.png' title='Failed to delete feature' class='docsImage'>
 
 ### Preprocessing features
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
@@ -332,7 +328,7 @@ The planning grids window provides information on the planning grids that are av
 - Domain - Whether the planning grid relates to marine or terrestrial areas (not available for imported planning grids).
 - Area - The area of the planing units that make up the planning grid (in square kilometers).  
 
-<img src='images/window_planning_units.png' title='Planning grids window' class='docsImage'>
+<img src='images/window_planning_grids.png' title='Planning grids window' class='docsImage'>
 
 At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To view more details on an individual planning grid, click on the ellipsis button on the right hand side of the table.  
 
@@ -446,7 +442,7 @@ The User menu allows you to view and update information on the currently logged 
 #### Settings 
 The Settings window provides access to general settings for the Marxan Web tool and these settings are saved between sessions.  
 
-<img src='images/window_settings.png' title='Settings window' class='docsImage'>
+<img src='images/window_user_settings.png' title='Settings window' class='docsImage'>
 
 The Mapbox basemap style setting allows users to select their default basemap from a list including vector basemaps and imagery basemaps. For more information see [Changing the basemap](#changing-the-basemap).  
 
@@ -455,7 +451,7 @@ The Show planning unit popup is used to control the visibility of the popup with
 #### Profile
 The Profile window allows users to update their profile information.  
 
-<img src='images/windows_profile.png' title='Profile window' class='docsImage'>
+<img src='images/windows_user_profile.png' title='Profile window' class='docsImage'>
 
 #### Change password
 The Change password window allows users to update their password. Users will have to use this new password the next time they log into Marxan Web.  
@@ -504,7 +500,7 @@ Any spatial data that is imported into Marxan Web is stored in a database on the
 
 ## Tools and analyses
 ### Gap analysis window
-<img src='images/window_gap_analysis.png' title='Gap analysis window' class='docsImage'>
+<img src='images/window_gap_analysis_01.png' title='Gap analysis window' class='docsImage'>
 
 The gap analysis window shows the results of a gap analyis using the features and targets from the current project (using the method outlined in [Rodriguez <i>et al</i>, 2004](#references)). A gap analysis calculates how much of each feature is protected within the existing protected area network and then summarises the representation as a score. The calculation is based on combining the protected areas into a single layer where there are no overlaps (i.e. dissolving the protected area boundaries) - this dissolving is based on a filtered set of protected areas which excludes the following:
 - The status is not 'Proposed' or 'Not reported'
@@ -534,7 +530,7 @@ This provides a link to the main page for the Marxan Web documentation.
 ### About window
 The About window provides information on the versions of software that are being used including the underlying DOS version of Marxan. It also provides information on data providers and funding and in-kind contributions. 
 
-<img src='images/windows_about.png' title='About window' class='docsImage'>
+<img src='images/window_about.png' title='About window' class='docsImage'>
 
 ## References  
 Jantke, K, Kuempel, CD, McGowan, J, Chauvenet, ALM, Possingham, HP. <i>Metrics for evaluating representation target achievement in protected area networks. Divers Distrib</i>. 2019; 25: 170– 175. [https://doi.org/10.1111/ddi.12853](https://doi.org/10.1111/ddi.12853){:target="_blank"}
