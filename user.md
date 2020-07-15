@@ -52,12 +52,12 @@ The main part of the application user interface is taken up by the interactive m
 
 ### Toolbar
 At the centre top of the user interface is the main toolbar which includes a number of sections:
-- The name of the Marxan Server that the user is currently connected to. Click this name for more details of the Marxan Server (see [Server Details](#server-details)
-- A menu for the user (see [The User Menu](#the-user-menu)
+- The name of the Marxan Server that the user is currently connected to. Click this name for more details of the Marxan Server (see [Server Details](#server-details))
+- A menu for the user (see [The User Menu](#the-user-menu))
 - Buttons for opening the project, feature and planning grid windows 
 - Buttons for showing/hiding the project and results windows
-- A menu for the tools and analyses of Marxan Web (see [Tools and Analysis](#tools-and-analyses)  
-- A menu for the help documentation (see [Help](#help)
+- A menu for the tools and analyses of Marxan Web (see [Tools and Analysis](#tools-and-analyses))  
+- A menu for the help documentation (see [Help](#help))
 
 ## Projects
 ### Understanding projects
@@ -298,7 +298,7 @@ The feature details window shows you all of the information for an individual fe
 
 ### Managing features
 #### Creating new features
-All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).  
+All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox). In all of the import/create feature windows there is the option to add the new feature to the current project.   
 
 ##### Importing from a shapefile
 To upload existing spatial data from the local machine onto the server as new features use the import from shapefile window. This steps you through the process of imported single or multiple features.  
@@ -329,9 +329,11 @@ Features can also be imported from common web formats such as Web Feature Servic
 <img src='images/window_import_from_web_01.png' title='Import from web window' class='docsImage'>
 
 - In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. For example, the following WFS endpoint can be used to import Crane data [Harris <i>et al</i>, 2019](#references)):  
+
 ```
 https://dservices2.arcgis.com/7p8XMQ9sy7kJZN4K/arcgis/services/Cranes_Species_Ranges/WFSServer?service=wfs&request=getcapabilities
-```
+```  
+
 When the GetCapabilities resource has been loaded click next.  
 
 <img src='images/window_import_from_web_02.png' title='Import from web window' class='docsImage'>
@@ -349,10 +351,10 @@ Features can also be directly imported into Marxan Web from GBIF who provide spe
 
 To import data from GBIF:
 - Click on the Import button and select From the Global Biodiversity Information Facility.  
+- Type at least 3 letters in the search box to find matching names from GBIF  
 
 <img src='images/window_import_from_gbif.png' title='Import from GBIF window' class='docsImage'>
 
-- Type at least 3 letters in the search box to find matching names from GBIF
 - Select a species and click OK
 
 The GBIF occurrence records are imported as a single feature - currently all records are buffered to 100m from their original lat/lng value although this will change in a future version.  
@@ -446,16 +448,13 @@ When a planning grid is used within a project, by default all of the planning un
 <img src='images/tab_planning_units.png' title='Planning Units tab' class='docsImage'>
 
 #### Understanding planning unit status and cost  
-All planning units have two attributes that influence the results of a Marxan analysis: status and cost. The status of a planning unit determines whether it is included in the results (i.e. locked in) or excluded (i.e. locked out). The default status is neither included or excluded but determined during the Marxan analysis. The cost of a planning unit is not a hard value that locks in/out a particular planning unit, but rather a weighting to subtely influence the results. 
+All planning units have two attributes that influence the results of a Marxan analysis: status and cost. The status of a planning unit determines whether it is included in every solution (i.e. locked in) or excluded (i.e. locked out). The default status is neither included or excluded but determined during the Marxan analysis. The cost of a planning unit is not a hard value that locks in/out a particular planning unit, but rather a weighting to subtely influence the results. 
 
-#### Status: Manually including/excluding individual planning units
+#### Status
+##### Manually including/excluding individual planning units
 Manually including or excluding individual planning units is useful where a real-world issue affects where new protected areas can be designated. For example, if you know that a particular planning unit contains a restricted military area and cannot be designated, then you could manually exclude that planning unit from the project.  
 
-If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode (disabling the Project and Features tab), where you can change the status of any of the units to be one of the following: 
-
-- initially included (i.e. the planning unit is initially in the reserve system but is not guaranteed to be in the results). 
-- locked in the reserve system, i.e. the planning unit will be present in every solution.
-- locked out of the reserve system, i.e. the planning unit will be absent in every solution.
+If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode (disabling the Project and Features tab), where you can change the status of any of the units to be one of the following: Default, locked in or locked out.  
 
 To change the status of a planning unit, click on the map. The status will cycle between the three states. If you want to reset the status to the default then right click on the planning unit. If you want to reset all of your manual edits, click on the eraser button. The status of the planning unit is shown in the legend.  
 
@@ -463,7 +462,7 @@ To change the status of a planning unit, click on the map. The status will cycle
 
 When you have finished editing the planning units, click on the save icon and the statuses will be saved. You can now run the project with these updated statuses. It is important to note that these changes to the planning units only appy to the current project and not to the planning grid itself. Creating a new project with the same planning grid will not show any of the manual changes that have been made.  
 
-#### Status: Including existing protected areas
+##### Including existing protected areas
 Another method of changing the status of planning units, is to include all existing protected areas in the project. By including protected areas in the project you are ensuring that the existing protected areas network is part of your overall reserve design. See [Protected Areas information](#protected-areas-information) for information on the source of the protected areas data.  
 
 To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. The 'All' category includes all IUCN Categories including the categories 'Not Reported', 'Not Assigned' and 'Not Applicable'. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories). The map will update to show the planning units that include protected areas with that particular IUCN category.  
@@ -474,7 +473,7 @@ If this is the first time that the protected areas have been locked in, then pre
 
 If you have already made some manual edits to the planning units and these overlap with the planning units that contain protected areas, then the manual edit will take precedence.  
 #### Costs
-By default all project in Marxan Web have an equal area cost surface which means that planning units with the same area have the same cost. All planning units created in Marxan Web are equal area and so by definition costs are equal. You can create your own cost surfaces and import them for use within Marxan Web - the cost value is show in the legend.  
+By default all project in Marxan Web have an equal area cost surface which means that planning units with the same area have the same cost. All planning units created in Marxan Web are equal area and so by definition costs are equal. You can create your own cost surfaces and import them for use within Marxan Web - the cost value is show in the legend and can be queried using the identify tool (see [Identifying Planning Units](#identifying-planning-units)).
 
 <img src='images/legend_planning_unit_cost.png' title='Planning unit cost legend' class='docsImage'>
 
@@ -563,8 +562,8 @@ Admin users have the most privilages in Marxan Web and have full access to all f
 ### The User menu
 The User menu allows you to view and update information on the currently logged on user and to set general settings for Marxan Web. Click on the user name to show the User menu. The items in the menu are described in the following sections.  
 
-#### Settings 
-The Settings window provides access to general settings for the Marxan Web tool and these settings are saved between sessions.  
+#### User Settings 
+The User Settings window provides access to general settings for the Marxan Web tool and these settings are saved between sessions.  
 
 <img src='images/window_user_settings.png' title='Settings window' class='docsImage'>
 
@@ -608,17 +607,17 @@ When the results of a Marxan run are shown in the map, users can click on planni
 ### Identifying items on the map
 Like traditional GIS systems the map also allows the identification of items by clicking on the map. The identify window shows the resulting items from the planning grid layer, protected area layer and feature layers. 
 
-#### Identify: Planning Units
+#### Identifying Planning Units
 The identify planning units window summarises the metadata about the planning unit (including the type of planning unit and its cost) and the features and their areas that occur within that planning unit.  
 
 <img src='images/identify_planning_units.png' title='Identify  window' class='docsImage'>
 
-#### Identify: Protected areas
+#### Identifying Protected areas
 The identify protected areas window shows a list of all of the protected areas that occur at that point and information on the designation, IUCN category and a link to their page on the protectedplanet website.  
 
 <img src='images/identify_protected_areas.png' title='Identify  window' class='docsImage'>
 
-#### Identify: Features
+#### Identifying Features
 The identify features window shows a list of features that occur at that point that are currently visible on the map.  
 
 <img src='images/identify_features.png' title='Identify  window' class='docsImage'>
@@ -636,7 +635,7 @@ To change the transparency of layers in the map, click on the slider in the lege
 ### Changing the basemap
 The basemaps that are used in Marxan Web include both traditional vector cartography and high resolution imagery. The vector data is provided by Open Street Map (OSM) which is a community-driven public dataset of the worlds geographic features. In many parts of the world it offers unrivalled detail on a whole range of geographic features which are updated on a rolling basis (including down to the street and house level). For more information see [OpenStreetMap](https://www.openstreetmap.org/). The imagery data comes from a variety of commercial providers, as well as open data from NASA, USGS, and others. For more information see [Mapbox Sources](https://www.mapbox.com/about/maps/#data-sources).  
 
-To change the basemap, select one from the list in the User Menu. For more information see [The User menu](#the-user-menu).  
+To change the basemap, select one from the list in the User Settings. For more information see [User settings](#user-settings).  
 
 ### Requirements for importing spatial data  
 Any spatial data imported into Marxan Web must have the necessary projection information file present (a *.prj file in a shapefile) so that the feature can be projected internally to an equal area projection. This internal reprojection is necessary so that spatial operations can be done (e.g. intersection) and so that Marxan can run using the data.  
@@ -670,7 +669,7 @@ The gap analysis window shows the results of a gap analyis using the features an
 
 The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).  
 
-The Gap Analysis can also be shown as a graph as in the following screenshot.    
+The Gap Analysis can also be shown as a chart as in the following screenshot.    
 
 <img src='images/window_gap_analysis_02.png' title='Gap analysis window' class='docsImage'>
 
