@@ -453,7 +453,10 @@ If you want to manually include or exclude individual planning units from the pr
 - locked in the reserve system, i.e. the planning unit will be present in every solution.
 - locked out of the reserve system, i.e. the planning unit will be absent in every solution.
 
-To change the status of a planning unit, click on the map. The status will cycle between the three states. If you want to reset the status to the default then right click on the planning unit. If you want to reset all of your manual edits, click on the eraser button.  
+To change the status of a planning unit, click on the map. The status will cycle between the three states. If you want to reset the status to the default then right click on the planning unit. If you want to reset all of your manual edits, click on the eraser button. The status of the planning unit is shown in the legend.  
+
+<img src='images/legend_planning_unit_status.png' title='Planning Units status' class='docsImage'>
+
 When you have finished editing the planning units, click on the save icon and the statuses will be saved. You can now run the project with these updated statuses. It is important to note that these changes to the planning units only appy to the current project and not to the planning grid itself. Creating a new project with the same planning grid will not show any of the manual changes that have been made.  
 
 #### Status: Including existing protected areas
@@ -467,7 +470,9 @@ If this is the first time that the protected areas have been locked in, then pre
 
 If you have already made some manual edits to the planning units and these overlap with the planning units that contain protected areas, then the manual edit will take precedence.  
 #### Costs
-By default all project in Marxan Web have an equal area cost surface which means that planning units with the same area have the same cost. All planning units created in Marxan Web are equal area and so by definition costs are equal. You can create your own cost surfaces and import them for use within Marxan Web. The following sections describe how to do that.
+By default all project in Marxan Web have an equal area cost surface which means that planning units with the same area have the same cost. All planning units created in Marxan Web are equal area and so by definition costs are equal. You can create your own cost surfaces and import them for use within Marxan Web - the cost value is show in the legend.  
+
+<img src='images/legend_planning_unit_cost.png' title='Planning unit cost legend' class='docsImage'>
 
 ##### Creating a cost surface
 Cost surfaces are specific to individual planning grids and the first step to creating a cost surface is to download the planning grid that you want to create a cost surface for. For more information see [Exporting planning grids](#exporting-planning-grids). Once you have downloaded and unzipped the planning grid shapefile create a .cost file that can be imported and used in Marxan Web. The following steps describe a generic workflow that should be followed in a desktop GIS package, e.g. ArcGIS or QGIS.  
@@ -615,7 +620,9 @@ The identify features window shows a list of features that occur at that point t
 <img src='images/identify_features.png' title='Identify  window' class='docsImage'>
 
 ### Changing how the results are displayed
-The display of the results in the map can be configured using the Classification window, accessible from the gear icon in the Results on the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the sum of solutions are symbolised, change any of the parameters in the Classification window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded.  
+The display of the results in the map can be configured using the Classification window, accessible from the gear icon in the Results on the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the sum of solutions are symbolised, change any of the parameters in the Classification window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded. 
+
+<img src='images/legend_change_symbology.png' title='Classification window' class='docsImage'>
 
 ### Changing transparency of layer
 To change the transparency of layers in the map, click on the slider in the legend and move it to the right (more opaque) or the left (more transparent). To show/hide the layer click on the eye icon.  
