@@ -103,6 +103,9 @@ Setting this to True will disable all security on the server. This can be useful
 ##### DISABLE_FILE_LOGGING
 Set to True to disable all logging to file.  
 
+##### ENABLE_RESET
+Set to True to enable a server reset. A server reset will reset a Marxan Server instance to the original install condition, including restoring the original database and removing all users. This is useful for resetting data before running a training course.  
+
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
 
@@ -120,6 +123,9 @@ The name of the default base map that the user has selected.
 
 ##### ROLE 
 The current role for the user.
+
+##### REPORTUNITS
+The default report unit to use for reporting areas in various parts of the application.  
 
 #### runlog.dat
 The runlog.dat provides a log of all of the runs that have been done in the marxan-server instance. In some cases where the server crashed or quit unexpectedly, there may be logs in the run that were not terminated properly. These records can be manually deleted from the log if required.    
