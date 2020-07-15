@@ -6,7 +6,7 @@
 
 Marxan Web is a decision-support platform for doing Systematic Conservation Planning over the web and for sharing the results amongst stakeholders and the conservation community. It builds upon the existing Marxan software and offers the following new features and benefits:  
 
-- Streamlined access to spatial data layers from our partners (in development)
+- Streamlined access to spatial data layers from our partners 
 - Training and demonstration tutorials (in development)
 - Built in geoprocessing and file construction
 - Improved mapping and visualization capabilities
@@ -15,32 +15,33 @@ Marxan Web is a decision-support platform for doing Systematic Conservation Plan
 For more information about migrating from the existing version of Marxan see the [Migration Guide](migration.html)
 
 ## The Marxan User Interface
-The section provides a brief overview of the main elements in the Marxan User Interface and introduces some of the terminology in use. For more detailed information visit the individual sections further on.
+The section provides a brief overview of the main elements in the Marxan User Interface and introduces some of the terminology in use. For more detailed information visit the individual sections further on.  
+
 ### Log in window
 When Marxan Web is first loaded the login screen is presented as shown in the image below. The login screen allows you to select a Marxan Server and to login to that server. It also allows you to register as a new user. For more information see [New User Registration](#new-user-registration).  
 
 <img src='images/window_login.png' title='Login window' class='docsImage'>
 
-Marxan Servers are the databases that contain all of the Marxan projects that are distributed around the world in different organisations and, in the case of local installations, they include the local server (shown as localhost). Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. The list of servers comes from a central database (called the Marxan Registry) and any organisation can be added to this list.  
+Marxan Servers are the public and private hosted instances of the Marxan Server database in different organisations around the world and they also include instances that are running on a local machine (shown as localhost). A Marxan Server database contains the projects, features and planning grids that are managed by that organisation and that are relevant to their own users. Users can connect to these servers to view those projects that have been created in those organisations. In addition, if those organisations have granted access, these projects can be edited and run by those users. The list of servers comes from a central database (called the Marxan Registry) and any organisation can be added to this list.  
 
 Hovering over a server shows a brief description of that server and the domain on which it is hosted. An icon to the left of the name shows the current status of that server according to the following symbols:  
-- <no symbol> Read/write - projects can be viewed and edited (by users with those permissions)
+- \<no symbol\> Read/write - projects can be viewed and edited (by users with those permissions)
 - ![read only](images/read_only.png) Read only - project can be viewed only (by the guest user)
-- ![offline](images/offline.png) Server currently offline - no connection is possible. This could be due to a number of reasons: the server could be down, the server may be inaccessible due to firewall restrictions or the network connection may have been lost.  
+- ![offline](images/offline.png) Server currently offline - no connection is possible. This could be due to a number of reasons including: the server could be down or the network connection may have been lost.  
 
-Once a server has been selected, the user must enter their credentials to login to that server. The user will be logged in according to their role: read-only user, user or admin user. Each of these roles have a different set of features that they have access to in the application with admin users having access to all features. All of the screen shots in the following sections show the application as an admin user and hence not all elements may be visible if logged in as a different user. For more information see [Roles](#roles).
+Once a server has been selected, the user must enter their credentials to login to that server. The user will be logged in according to their role: read-only user, normal user or admin user. Each of these roles have a different set of functions that they have access to in the application with admin users having access to all functions. All of the screen shots in the following sections show the application as an admin user and hence not all elements may be visible if logged in as a different user. For more information see [Roles](#roles).
 
-Once you are logged in you will see the Marxan User Interface. This comprises three main elements which are part of a single page web application: the map, the project window (on the left) and the results window (on the right). Other windows are shown as and when they are required. This single page will remain the main user interface until logging out and all tasks are completed in this interface.  
+Once you are logged in you will see the Marxan User Interface. This comprises four main elements which are part of a single page web application: the map, the project window (on the left), the results window (on the right) and the toolbar. Other windows are shown as and when they are required. This single page will remain the main user interface until logging out and all tasks are completed in this interface.  
 
 ### Project window
 On the left hand side of the application user interface is the project window which comprises three tabs: the project tab, the features tab and the planning units tab. These tabs taken together represent the inputs to the analysis: which project, which features are part of that project and what planning units will be used. For more information on projects see the [Projects](#projects) section.  
 
 <img src='images/tab_project.png' title='Project window' class='docsImage'>
 
-At the bottom of the project window is a toolbar for working with the project. There are buttons to start, stop and configure Marxan Runs and also buttons to zoom back to the projects full extent and to get a shareable url (projects are only shareable if they are running on a hosted Marxan server). This link can be shared with anyone and will open the project (as a guest user) with no requirement to login first.  
+At the bottom of the project window is a toolbar for working with the project. There are buttons to start, stop and configure Marxan Runs and also a button to get a shareable url to the project (projects are only shareable if they are running on a hosted Marxan server). This link can be shared with anyone and will open the project (as a guest user) with no requirement to login first.  
 
 ### Results window
-On the right hand side of the application user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the [Running projects](#running-projects) section.  
+On the right hand side of the user interface is the results window which also comprises three tabs: the legend tab, the solutions tab and the log tab. These tabs taken together represent the outputs of the Marxan analysis and allow the user to change what results are shown and how they are visualised. For more information on project outputs see the [Running projects](#running-projects) section.  
 
 <img src='images/tab_legend.png' title='Results window' class='docsImage'>
 
@@ -49,20 +50,29 @@ The main part of the application user interface is taken up by the interactive m
 
 <img src='images/png_example.png' title='Map' class='docsImage'>
 
+### Toolbar
+At the centre top of the user interface is the main toolbar which includes a number of sections:
+- The name of the Marxan Server that the user is currently connected to. Click this name for more details of the Marxan Server (see [Server Details](#server-details)
+- A menu for the user (see [The User Menu](#the-user-menu)
+- Buttons for opening the project, feature and planning grid windows 
+- Buttons for showing/hiding the project and results windows
+- A menu for the tools and analyses of Marxan Web (see [Tools and Analysis](#tools-and-analyses)  
+- A menu for the help documentation (see [Help](#help)
+
 ## Projects
 ### Understanding projects
 Projects are the main way of organising Marxan Web analyses and are the starting point for new conservation planning activities. Each project contains a set of planning units which represent the geographic domain over which the analysis will be done; a set of spatial features to be considered in the analysis (e.g habitats, cultural sites, species distributions, ecological processes); and a set of parameters that are used to fine-tune the analysis. A project also has a limited set of metadata including the project name, a description and the date that it was created. Users with read/write permissions can create any number of projects which are limited only by the amount of disk storage on the server machine.  
 
 #### Types of project
-Marxan Web projects can be created from scratch using the New Project wizard, or they can be imported from previous Marxan projects. Both types of projects can be run and visualised in the map, but imported projects have less capabilities than new projects. The preferred method of creating projects is to create them using the New Project wizard where possible. The main difference is that features cannot be added or removed in imported projects and those features can't be visualised on the map.  
+Marxan Web projects can be created from scratch using the New Project wizard, or they can be imported from previous Marxan projects. Both types of projects can be run and visualised in the map, but imported projects have less capabilities than new projects. The preferred method of creating projects is to create them using the New Project wizard where possible. The main difference is that features cannot be added or removed in imported projects and those features cannot be visualised on the map.  
 
 ### The projects window
-The projects window is the main way you manage projects on a server and depending on your user role you can manage your own projects or everybodys projects. The projects window lists the projects on the server together with their metadata including the user, project name, description and creation date (the actual columns that are shown will depend on the user role). The view of projects can be sorted by any of the columns by clicking on the column header to sort in ascending or descending order. At the bottom of the window is a toolbar that contains the common tasks associated with managing projects - the actual buttons that are shown will depend on the user role. The functioning of these buttons is described in the following sections. 
+The projects window is the main way you manage projects on a server and depending on your user role you can manage your own projects or everybodys projects. The projects window lists the projects on the server together with their metadata including the user, project name, description and creation date (the actual columns that are shown will depend on the user role). The view of projects can be sorted by any of the columns by clicking on the column header to sort in ascending or descending order. In addition, at the top of the window is a filter box that allows you to filter the items by matching or non-matching text (in common with the features and planning grid windows as well). For more information on filtering items, see [Filtering Items](#filtering-items). At the bottom of the window is a toolbar that contains the common tasks associated with managing projects - the actual buttons that are shown will depend on the user role. The functioning of these buttons is described in the following sections. 
 
 <img src='images/window_projects.png' title='Projects window' class='docsImage'>
 
 ### Included case studies
-In a default installation of Marxan Web, there are a number of pre-loaded case studies that will be shown in the projects window. These have been created to help you get up and running quickly by providing examples and specific tutorials for working through real-world conservation planning scenarios. These will be available from the 'localhost' server. 
+In a default installation of Marxan Web, there are a number of pre-loaded case studies that will be shown in the projects window. These have been created to help you get up and running quickly by providing examples and specific tutorials for working through real-world conservation planning scenarios.  
 
 ### Managing projects
 This section contains information on the common tasks associated with managing projects.  
@@ -86,8 +96,25 @@ To create a new project using the New Project wizard:
 
 The project will now be created and opened and can be run immediately.  
 
-#### Importing existing Marxan projects
-Existing Marxan projects can also be imported to Marxan Web using the Import Project window (currently only supported on Google Chrome). Imported projects do not have the same functionality of projects created with the New Project wizard. There are a number of important differences, in particular, the following capabilities are not supported on imported projects: 
+#### Importing Marxan Web project
+Projects exported from Marxan Web as .mxw files can be imported using the Import Marxan Web project window. 
+
+To import a Marxan Web project:
+- Click on the Import button in the Projects window and select from Marxan Web
+- In the Import from Marxan Web window, select the .mxw file
+
+<img src='images/window_import_mxw_01.png' title='Import Marxan Web project window' class='docsImage'>
+
+- Click Next and enter the project metadata
+
+<img src='images/window_import_mxw_02.png' title='Import Marxan Web project window' class='docsImage'>
+
+- Click Finish.  
+
+The project will now be imported and any individual features or planning grids that do not yet exist on the Marxan Server instance will be created. Once this process has finished the imported Marxan Web project will be shown in the project window and can be run immediately.  
+
+#### Importing Marxan DOS projects
+Existing Marxan DOS projects can be imported to Marxan Web using the Import existing Marxan project window (currently only supported on Google Chrome). Imported projects do not have the same functionality of Marxan Web projects (i.e. created with the New Project wizard or imported from mxw files). There are a number of important differences, in particular, the following capabilities are not supported on imported projects: 
 
 - Project features cannot be added or removed
 - Showing the project features on the map 
@@ -95,7 +122,7 @@ Existing Marxan projects can also be imported to Marxan Web using the Import Pro
 - Project features have only basic metadata, e.g. simple names and no descriptions  
   
 To import a DOS-based Marxan project:  
-- Click on the Import button in the Projects window
+- Click on the Import button in the Projects window and select from Marxan DOS
 - Specify the Marxan Project Folder which should point to the folder that contains the input.dat file
 - Zip up the planning grid shapefile that was used in the DOS-based Marxan project - this shapefile must have a field called 'puid' which is the unique value for the planning unit. All of the individual files that make up a shapefile should be included (e.g. shp, shx, dbf etc.). Do not include any relative or absolute paths or any other files.  
 - Upload the zipped shapefile
@@ -114,14 +141,19 @@ The project will now be imported and the shapefile will be uploaded to Mapbox (f
 #### Duplicating a project
 Duplicating a project copies all of the project information to start a new project with the same project name but with a '_copy' suffix. The project can then be opened, edited and run. This provides a mechanism for iterating projects, scenario planning and parameter testing.
 
+#### Exporting a project
+Marxan Web projects can be exported to a file which contains all of the features, planning grid and run settings for the project. This file can then be imported to any Marxan Server instance and thereby provides an exchange format for projects (see [Importing Marxan Web projects](#importing-marxan-web-projects). This could be useful, for example, where a user has worked on a project on their local machine (where it is private), and then they want to share it to a wider community - exporting to a .mxw file and then importing on a publically hosted Marxan Server allows them to do this.  
+
 #### Deleting a project
-To delete a project, select a project and click on the delete button. Deleting a project will not delete any features or planning grids.  
+To delete a project, select a project and click on the delete button. Deleting a project will not delete any features or planning grids. Admin users have the ability to delete projects belonging to any user.  
 
 #### Controlling access to a project
-By default projects are created as public which means that they can be viewed by any other Marxan user. In order to restrict access to the project, it can be flagged as private and it will then only be visible to the project author. To set a project as private, in the project tab select the check box marked private at the bottom of the window.  
+By default projects are created as public which means that they can be viewed by any other Marxan user. In order to restrict access to the project, it can be flagged as private and it will then only be visible to the project author. To set a project as private (the default value), in the project tab select the check box marked private at the bottom of the window.  
 
 #### Editing project metadata
 To edit the name or description for a project, simply click on the name or description in the project tab and then edit it. When you are finished press ENTER. The description can be entered as HTML so that hyperlinks to web resources can be embedded.     
+
+<img src='images/edit_project_name.png' title='Editing a project name' class='docsImage'>
 
 ### Managing features within a project
 The features that are included in a project are shown in the features tab and for each feature there is a target icon (on the left), a status bar (underneath the feature name) and a context menu (on the right).  
@@ -130,22 +162,22 @@ The features that are included in a project are shown in the features tab and fo
 
 The target icon shows the target that has been set for that particular feature and its color reflects the status of the features target. If the project has been run and the target has been achieved for the feature then it is white. If the target has not been achieved it is shown in pink.  
 
-The status bar shows a scale from 0 to 100% which reflects the percentage of the target acheived (in blue) relative to the amount set (in grey). If there is a target shortfall for a feature, the target icon will be pink.  
+The status bar shows a scale from 0 to 100% which reflects the percentage of the target acheived (in colour) relative to the amount set (in grey). If there is a target shortfall for a feature, the target icon will be pink.  
 
-The context menu provides a set of functions that apply to the feature and the functions available depends on whether the project was created using the New Project wizard or imported and also on whether the feature was uploaded to Mapbox as a shapefile (see the [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox) section).  
+The context menu provides a set of functions that apply to the feature and the functions available depends on whether the project is a Marxan Web project or imported from Marxan DOS and also on whether the feature was uploaded to Mapbox as a shapefile (see the [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox) section).  
 
 <img src='images/feature_context_menu.png' title='Feature context menu' class='docsImage'>
 
 The following list is the full set of functions that are available in the context menu:  
 - Properties - this opens the Feature Properties window - for more information see [Feature Properties window](#feature-properties-window).  
 - Remove from project - this is a shortcut to remove that feature from the project.  
-- Add to map - the features geometry will be added to the map as a polygon - currently only one feature at a time can be shown on the map.  
-- Outline planning units where the feature occurs - this shows those planning units which intersect the feature's distribution. Only one feature can be shown at a time.  
+- Add to map - the features geometry will be added to the map as a polygon
+- Outline planning units where the feature occurs - this shows those planning units which intersect the feature's distribution. 
 - Zoom to feature extent - zooms the map to the extent of the feature's geometry.  
 - Preprocess - intersects the feature with the planning grid which is a prerequisite for a Marxan run. For more information see [Preprocessing features](#preprocessing-features).  
 
 #### Adding and removing features  
-To add or remove features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)  
+To add or remove features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).  
 
 #### Viewing feature metadata  
 In the context menu click Properties to view all of the feature metadata. For more information see [Feature Properties window](#feature-properties-window).  
@@ -154,6 +186,8 @@ In the context menu click Properties to view all of the feature metadata. For mo
 Individual feature targets can be changed in one of two ways:  
 - In the features tab, double click on the target icon of the feature whos target you want to change, type the new target percent and press ENTER
 - In the Feature Properties window, enter a new value in the Target Percent field and click OK  
+
+<img src='images/edit_feature_target.png' title='Feature tab' class='docsImage'>
 
 To change targets for all features, click on the target icon underneath the list of features and set a value.  
 
@@ -166,9 +200,9 @@ When you run a project in Marxan Web there are a number of discrete steps that t
 
 If you are running the project for the first time or you have added new features since the last time you ran it, then all of those features need to be preprocesssed. For more information see [Preprocessing features](#preprocessing-features). This is done automatically as part of the Marxan run. Depending on how many features are in the project, and the scale of the project, this may take some time. The state of that preprocessing is shown in the Log tab.  
 
-Once feature preprocessing has been completed, Marxan computes the best combinations of planning units that meet the feature targets and minimises the total cost of the solution. The number of solutions generated can be set in the Run Settings window (see [Run settings](#run-settings)). By default any new project will have 10 iterations but we recommend changing this to 100 once the project is set up and the features have been processed. Runs can be stopped at any time using a number of methods. For more information see [Stopping runs](#stopping-runs).  
+Once feature preprocessing has been completed, Marxan computes the best combinations of planning units that meet the feature targets and minimises the total cost of the solution. The number of solutions generated can be set in the Run Settings window (see [Run settings](#run-settings)). By default any new project will have 10 iterations but we recommend changing this to at least 100 once the project is set up and the features have been processed. Runs can be stopped at any time using a number of methods. For more information see [Stopping runs](#stopping-runs).  
 
-The state of the Marxan project's execution is shown in the Log tab (although this is currently not supported on Windows) and the Run number shows the status. There is a lot of additional information in the Log window which shows the statistics that have been produced by the algorithms. The state of a Marxan run is also shown in the Run log window (admin users only). For more information see [the Run log](#the-run-log).
+The state of the Marxan project's execution is shown in the Log tab (although this is currently not supported on Windows) and the Run number shows the status. There is a lot of additional information in the Log window which shows the statistics that have been produced by the Marxan algorithms. The state of a Marxan run is also shown in the Run log window. For more information see [the Run log](#the-run-log).
 
 When the run completes succesfully, at the end of the run the results will be shown on the map and in the features tab. For more information see [Viewing and interpreting the results](#viewing-and-interpreting-the-results). If the run is stopped before it has finished then no results will be available and the results from the previous run (if available) will still be visible in the map and in the features tab.
 
@@ -177,17 +211,17 @@ There are a large number of settings that can be changed for the Marxan run and 
 
 <img src='images/window_run_settings.png' title='Run settings window' class='docsImage'>
 
-To set a run parameter, click in the value column next to the corresponding parameter, enter a new value and click OK. The setting will be used the next time you run the project. The method to change the BLM parameter value is slightly different - for more information see [Clumping window](#clumping-window).  
+Settings which can be edited are shown in grey. To set a run parameter, click in the value column next to the corresponding parameter, enter a new value and click OK. The setting will be used the next time you run the project. The method to change the BLM parameter value is slightly different - for more information see [Clumping window](#clumping-window).  
 
 ##### Changing the number of runs
-The number of runs tells Marxan how many times to find a good solution. The default setting for a new project is 10 to save time and processing power while a project is being created for the first time and you are trying to understand the impact of any changes in features, targets or costs. However, to comply with best practice, the number of runs should be set to 100 once you are satisfied the project reflects your objectives. 
+The number of runs tells Marxan how many times to find a good solution. The default setting for a new project is 10 to save time and processing power while a project is being created for the first time and you are trying to understand the impact of any changes in features, targets or costs. However, to comply with best practice, the number of runs should be set to at least 100 once you are satisfied the project reflects your objectives.  
 
 ##### Clumping window
 The degree to which the planning units are grouped or clumped together is controlled by the BLM setting and this value is set using the Clumping window. To access the Clumping window, click on the icon in the value column for the BLM setting.  
 
-<img src='images/windows_clumping.png' title='Clumping window' class='docsImage'>
+<img src='images/window_clumping.png' title='Clumping window' class='docsImage'>
 
-When the clumping window first opens for a project, Marxan Web will automatically run an anlysis that calculates every shared boundary length in the planning unit layer. This tells Marxan which planning units are next to eachother and enables the ability to start clumping results. The progress is shown in the Log tab. At the end of the process the clumping window will be enabled.  
+When the clumping window first opens for a project, Marxan Web will automatically run an analysis that calculates every shared boundary length in the planning unit layer. This tells Marxan which planning units are next to each other and enables the ability to start clumping results. The progress is shown in the Log tab. At the end of the process the clumping window will be enabled.  
 
 This window provides an interactive way to set the degree of clumping by running the project 5 times using different clumping values and showing the results on 5 separate maps. To use a specific BLM value derived from this process, click on the map that best reflects the level of clumping you prefer or enter the value directly in the Run settings window. The default values for the clumping window are: 0.001, 0.01, 0.1, 1 and 10. These may not necessarily be the best values for the current project and it may be necessary to experiment with different value ranges. To change the range of BLM values in the clumping window, enter new values for the minimum and maximum and click the Refresh button. These values will be scaled over the 5 separate maps and a new set of results will be shown.
 
@@ -196,7 +230,7 @@ To change the scale and position of all of the 5 separate maps, move or zoom the
 #### Stopping runs
 Project runs can be stopped at any point using one of the following methods:
 - By clicking on the Stop button in the main project window
-- By opening the Run Log window (admin users only) and clicking on the running project and clicking the Stop button. For more information see [the Run Log](#the-run-log).
+- By opening the Run Log window and clicking on the running project and clicking the Stop button (admin users only). For more information see [the Run Log](#the-run-log).
 
 Marxan runs can also be stopped for other reasons - for more information see [the Run Log](#the-run-log).
 
@@ -207,7 +241,7 @@ Once Marxan has completed the specified number of runs, the results are shown on
 The output of a single Marxan run is the collection of planning units required to meet the feature targets while minimising the total cost of the network. Each individual solution, when mapped, shows the distribution of planning units selected to be in the solution. For a more in depth discussion see, for example, [Marxan and Relatives: Software for Spatial Conservation Prioritization](https://www.researchgate.net/profile/Matthew_Watts/publication/43525654_Marxan_and_relatives_Software_for_spatial_conservation_prioritization/links/56ab3bcc08aeadd1bdcccc51.pdf).
 
 ##### Understanding the summary of solutions
-The summary of all the solutions (also refered to as the "Selection Frequency") shows the number of times a planning unit was selected to be in the final solution, across all runs. For exmaple, if you set the number of runs to 100, the maximum value in the summed solutions will be 100. This output is the default result mapped once the analysis is completes and shows you the relative value of the planning units needed to meet the objectives. The mapping symbology for this layer can be changed by clicking on the Legend settings button. For more information see [Changing how the results are displayed](#changing-how-the-results-are-displayed).
+The summary of all the solutions (also refered to as the "Selection Frequency") shows the number of times a planning unit was selected to be in the final solution, across all runs - this is the default output when you run Marxan Web. For exmaple, if you set the number of runs to 100, the maximum value in the summed solutions will be 100. This output is the default result mapped once the analysis is completes and shows you the relative value of the planning units needed to meet the objectives. The mapping symbology for this layer can be changed by clicking on the layer symbology button. For more information see [Changing how the results are displayed](#changing-how-the-results-are-displayed).
 
 ##### Solutions tab
 The individual solutions and the summary of solutions are presented in tabular form in the Solutions tab. By default, at the end of a Marxan analysis, the summary of solutions is shown in the map and the sum row is selected in the table. Underneath the sum row, each one of the individual solutions are shown with information on the overall score, cost, number of planning units and the number, if any, of targets that have been missed for each run. To show an individual solution on the map, click on the relevant solution in the table. The table data can be sorted (like all tables in Marxan Web) by clicking on the column header to sort in ascending or descending order. This allows you to rank the solutions in order of score. The lowest scoring run is considered to be the 'best solution' and is often the prefered or baseline output of any single solution.  
@@ -215,24 +249,26 @@ The individual solutions and the summary of solutions are presented in tabular f
 <img src='images/tab_solutions.png' title='Solutions tab' class='docsImage'>
 
 ##### Viewing target achievement
-Marxan also produces information on how much of each feature is captured in each solution and whether or not it has met its target. Targets are set in the Features tab - for more information see [Changing feature targets](#changing-feature-targets). To view information on which features have met their targets for an individual solution, select that solution in the Solutions tab - the features are updated in the Features tab - for more information on understanding feature targets and how they are visualised see [Managing features within a project](#managing-features-within-a-project). By default, at the end of a Marxan run the solution with the best score is shown in the Features tab.  
+Marxan also produces information on how much of each feature is captured in each solution and whether or not it has met its target. Targets are set in the Features tab - for more information see [Changing feature targets](#changing-feature-targets). To view information on which features have met their targets for an individual solution, select that solution in the Solutions tab - the features are updated in the Features tab - for more information on understanding feature targets and how they are visualised see [Managing features within a project](#managing-features-within-a-project). By default, at the end of a Marxan run the last solution is shown in the Features tab.  
 
 #### The Log window
-The purpose of the Log window is to provide realtime feedback on any processes that are running on the Marxan server. This is especially important for long-running processes (such as Marxan runs) where visual feedback is essential to know that something is still happening. The log window directly streams messages back from the Marxan server in realtime while the browser is connected. If the browser is closed or the connection is lost then the log will no longer update if the browser is reopened. In these cases processes on the server may still be running but there will be no realtime logging. To view the status of Marxan runs if you have disconnected you can use the Run log - for more information see [the Run log](#the-run-log).  
+The purpose of the Log window is to provide realtime feedback on any processes that are running on the Marxan server. This is especially important for long-running processes (such as Marxan runs) where visual feedback is essential to know that something is still happening. The log window directly streams messages back from the Marxan server in realtime while the browser is connected (this is currently not supported on Windows). If the browser is closed or the connection is lost then the log will no longer update if the browser is reopened. In these cases processes on the server may still be running but there will be no realtime logging. To view the status of Marxan runs if you have disconnected you can use the Run log - for more information see [the Run log](#the-run-log).  
 
 <img src='images/tab_log.png' title='Log tab' class='docsImage'>
 
 Whenever any preprocessing or Marxan runs are started, the log window is opened to show the progress and to show any errors, if they occur. This log can be copied to the clipboard (by clicking on the copy button at the bottom of the window) and cleared (by clicking on the erase button).  
 
 #### The Run log
-The Run log is used to view the status of any Marxan runs and to stop those runs where necessary. The table shows a list of all of the known Marxan runs and shows information on the process ID, user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The status is set according to the following values:  
-- Running - the run is currently running. This can also appear under exceptional circumstances either if the server crashes or is turned off.  
-- Stopped - the run was stopped by a user
+The Run log is used to view the status of any Marxan runs and to stop those runs where necessary (admin users only). The table shows a list of all of the Marxan runs and shows information on the process ID, user, project, start and end date, duration and the number of solutions completed and the number of solutions requested. The log updates automatically every 5 seconds.  
+
+The status is set according to the following values:  
+- Running - the run is currently running. This can also appear under exceptional circumstances either if the server crashes or is turned off during a run.  
+- Stopped - the run was stopped by a user.  
 - Killed - the run was killed by the operating system. This can happen if there are too many concurrent runs and the server runs out of memory.  
 
 <img src='images/window_runs.png' title='Run log window' class='docsImage'>
 
-Projects that have started running will continue to run on the server until one of the following happens: they complete; they are explicitly stopped or if the server kills the process. If the browser window or tab is closed or the connection to the server is lost, the run will continue regardless. To check the progress of a run if you have lost the connection to the server, you can open the run log and click on the Refresh button to see whether it has completed or not. If it has completed and you want to view the results then you can open the project from the Projects window. Only the results from last successful run can be loaded, as each subsequent run overwrites the previous results in Marxan. If you want to save the results of previous runs then the best approach is to duplicate the project and then run it with a different name.  
+Projects that have started running will continue to run on the server until one of the following happens: they complete; they are explicitly stopped or if the server kills the process. If the browser window or tab is closed or the connection to the server is lost, the run will continue regardless. To check the progress of a run if you have lost the connection to the server, you can open the run log to see whether it has completed or not. If it has completed and you want to view the results then you can open the project from the Projects window. Only the results from the last successful run can be loaded, as each subsequent run overwrites the previous results in Marxan. If you want to save the results of previous runs then the best approach is to duplicate the project and then run it with a different name.  
 
 Bear in mind that admin users have access to all of the runs that are currently running (for any user) and can stop runs using the Run Log window. To avoid this happening you can restrict access to particular projects by setting them as private. See [Controlling access to a project](#controlling-access-to-a-project).   
 
@@ -245,12 +281,12 @@ All features within the project initially carry the same weight - that is, all o
 The source for these features can come from a range of different sources including local spatial data, global data providers or digitising them on the screen. One of the benefits of using Marxan Web is that any features that have been captured by the community can be shared between projects (if users have permissions).  
 
 ### The features window
-The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description and the date that it was created on. Features can be sorted either in ascending or descending order by clicking the column in the table. Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To view all of the details for an individual feature, click on the ellipsis button on the right hand side of the table to open the feature details window.  
+The features window is used to show all of the features that are available on the server and it allows the user to manage those features. The list of features shows information on the name of the feature, a description, the date that it was created on and who it was created by. Features can be sorted either in ascending or descending order by clicking the column in the table. Features can also be filtered by matching on a text string (see [Filtering Items](#filtering-items). Hovering over the feature name will show the full unique system identifier for the feature and hovering over the description will show the full description if it cannot be read in the table. To view all of the details for an individual feature, click on the ellipsis button on the right hand side of the table to open the feature details window.  
 
 <img src='images/window_features.png' title='Features window' class='docsImage'>
 
 ### The feature details window
-The feature details window shows you all of the information for an individual feature and shows a preview of the feature on a map (if it has been uploaded to Mapbox). Additional internal information on the feature is available by clicking on the down arrow.  
+The feature details window shows you all of the information for an individual feature and shows a preview of the feature on a map (if it has been uploaded to Mapbox). Additional internal information on the feature is available by clicking on the more.. link.  
 
 <img src='images/window_feature_details.png' title='Feature details window' class='docsImage'>
 
@@ -258,20 +294,42 @@ The feature details window shows you all of the information for an individual fe
 #### Creating new features
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).  
 
-##### Importing existing features
-To upload existing spatial data from the local machine onto the server as new features, click on the Import button. This opens the Import wizard, which steps you through the process of imported single or multiple features.  
+##### Importing from a shapefile
+To upload existing spatial data from the local machine onto the server as new features use the import from shapefile window. This steps you through the process of imported single or multiple features.  
 
-In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next. In the seconds step, choose whether you want to create a single feature or a set of features from the shapefile, then click next. The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features. This field must contain unique values otherwise an error will be raised. Click finish to import the features from the shapefile. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
+- Click on the Import button and select From a shapefile. 
+- In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next. 
+<img src='images/window_import_features_01.png' title='Import shapefile window' class='docsImage'>
+
+- In the second step, choose whether you want to create a single feature or a set of features from the shapefile, then click next. 
+<img src='images/window_import_features_02.png' title='Import shapefile window' class='docsImage'>
+
+- The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features. 
+<img src='images/window_import_features_03.png' title='Import shapefile window' class='docsImage'>
+
+- Click finish to import the features from the shapefile. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
 
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
 ##### Importing from web  
-Features can also be imported from common web formats such as Web Feature Services. In the first step of the wizard, select the type of web resource and click next. In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. For example, the following WFS endpoint can be used to import Crane data [Harris <i>et al</i>, 2019](#references)):  
+Features can also be imported from common web formats such as Web Feature Services. 
+
+- Click on the Import button and select From the web. 
+- In the first step of the wizard, select the type of web resource and click next. 
+<img src='images/window_import_from_web_01.png' title='Import from web window' class='docsImage'>
+
+- In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. For example, the following WFS endpoint can be used to import Crane data [Harris <i>et al</i>, 2019](#references)):  
 ```
 https://dservices2.arcgis.com/7p8XMQ9sy7kJZN4K/arcgis/services/Cranes_Species_Ranges/WFSServer?service=wfs&request=getcapabilities
 ```
+When the GetCapabilities resource has been loaded click next. 
+<img src='images/window_import_from_web_02.png' title='Import from web window' class='docsImage'>
 
-When the GetCapabilities resource has been loaded click next. Select the feature type from the list of available feature types and click next. Enter a name and description for the feature that will be created. 
+- Select the feature type from the list of available feature types and click next. 
+<img src='images/window_import_from_web_03.png' title='Import from web window' class='docsImage'>
+
+- Enter a name and description for the feature that will be created and click Finish.
+<img src='images/window_import_from_web_04.png' title='Import from web window' class='docsImage'>
 
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
@@ -345,15 +403,15 @@ There are two basic types of planning grid: ones created in Marxan Web and ones 
 
 Whatever type of planning grid that you create, at the end of the creation process the planning grid will be uploaded to Mapbox - for more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).   
 
+##### Importing existing planning grids
+To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
+
+<img src='images/window_import_planning_grid.png' title='Importing existing planning grids' class='docsImage'>
+
 ##### Creating new planning grids using Marxan Web 
 To create a new planning grid in Marxan Web, click on the New button in the planning grids window. This opens the New Planning Grid window where you will need to select the necessary information to create the planning grid. For the area of interest, in future versions of Marxan Web you will be able to upload an area of interest which will define the geographic extent for the planning grid.  
 
 <img src='images/window_new_planning_grid.png' title='New planning grids window' class='docsImage'>
-
-#### Importing existing planning grids
-To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
-
-<img src='images/window_import_planning_grid.png' title='Importing existing planning grids' class='docsImage'>
 
 #### Deleting planning grids
 Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
@@ -477,7 +535,7 @@ In order to meet these requirements a technology called MapboxGL has been used a
 The main mapping features are described in the following sections.  
 
 ### Interacting with the map
-The interactive map supports all of the usual web map features such as panning, zooming and navigating but it also supports rotating and tilting the map view as well. To rotate or tilt the map view, right-click on the map and move the mouse up/down to tilt or left/right to rotate the map. To reset the rotation, click the compass icon in the bottom right of the map window. 
+The interactive map supports all of the usual web map features such as panning, zooming and navigating but it also supports rotating and tilting the map view as well. To rotate or tilt the map view, right-click on the map and move the mouse up/down to tilt or left/right to rotate the map. To reset the rotation, click the compass icon in the bottom right of the map window. To reset the extent of the map back to the extent of the project, click the square icon above the zoom in/out buttons.  
 
 When the results of a Marxan run are shown in the map, users can click on planning units to see a list of all of the features that occur in that particular planning unit. 
 
@@ -485,6 +543,7 @@ When the results of a Marxan run are shown in the map, users can click on planni
 The display of the analysis results in the map can be configured using the Legend Settings window, accessible from the bottom left corner of the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the planning units are symbolised, change any of the parameters in the Legend Settings window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded.  
 
 To change the transparency of the results layer in the map, click on the slider underneath the legend and move it to the right (more opaque) or the left (more transparent). This also applies to the protected areas layer which is shown when a set of protected areas is selected in the Planning Units tab. For more information see [Including existing protected areas](#including-existing-protected-areas).  
+
 ### Changing the basemap
 The basemaps that are used in Marxan Web include both traditional vector cartography and high resolution imagery. The vector data is provided by Open Street Map (OSM) which is a community-driven public dataset of the worlds geographic features. In many parts of the world it offers unrivalled detail on a whole range of geographic features which are updated on a rolling basis (including down to the street and house level). For more information see [OpenStreetMap](https://www.openstreetmap.org/). The imagery data comes from a variety of commercial providers, as well as open data from NASA, USGS, and others. For more information see [Mapbox Sources](https://www.mapbox.com/about/maps/#data-sources).  
 
@@ -514,15 +573,18 @@ Future versions of Marxan Web will have features to produce a downloadable repor
 
 GIS users can directly connect to the database of a local installation of Marxan Web and produce their own maps and reports by combining this Marxan data with their own local data layers. For more information see the [Developer Documentation](dev.html).  
 
-## Help menu
-The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
-
-### Server details
+## Server details
 The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system, version of the marxan-server and the version of the World Database of Protected Areas.  
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
 For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window. For information on updates to the WDPA see [here](https://www.protectedplanet.net/c/monthly-updates){:target="_blank"}. If the WDPA is updated with new data then the intersection analysis between the protected areas and the planning units will need to be repeated.  
+
+## Filtering items
+At the top of the windows for projects, features and planning grids is a filter box that allows the user to filter the items by matching or non-matching text. To filter the items simply enter any text string in the box and items are shown according to any columns that match the text string. To filter on non-matching text, enter an exclamation mark before the search text.  
+
+## Help menu
+The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
 
 ### Documentation
 This provides a link to the main page for the Marxan Web documentation.  
