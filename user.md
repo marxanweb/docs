@@ -49,6 +49,9 @@ The main part of the application user interface is taken up by the interactive m
 
 <img src='images/png_example.png' title='Map' class='docsImage'>
 
+### Toolbar
+
+
 ## Projects
 ### Understanding projects
 Projects are the main way of organising Marxan Web analyses and are the starting point for new conservation planning activities. Each project contains a set of planning units which represent the geographic domain over which the analysis will be done; a set of spatial features to be considered in the analysis (e.g habitats, cultural sites, species distributions, ecological processes); and a set of parameters that are used to fine-tune the analysis. A project also has a limited set of metadata including the project name, a description and the date that it was created. Users with read/write permissions can create any number of projects which are limited only by the amount of disk storage on the server machine.  
@@ -514,15 +517,15 @@ Future versions of Marxan Web will have features to produce a downloadable repor
 
 GIS users can directly connect to the database of a local installation of Marxan Web and produce their own maps and reports by combining this Marxan data with their own local data layers. For more information see the [Developer Documentation](dev.html).  
 
-## Help menu
-The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
-
-### Server details
+## Server details
 The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system, version of the marxan-server and the version of the World Database of Protected Areas.  
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
 For Admin users, if there is a new version of the WDPA available then they will be able to update it from this window. For information on updates to the WDPA see [here](https://www.protectedplanet.net/c/monthly-updates){:target="_blank"}. If the WDPA is updated with new data then the intersection analysis between the protected areas and the planning units will need to be repeated.  
+
+## Help menu
+The Help menu provides simple information on the server, a link to the documentation and an About box. These are described in the following sections.  
 
 ### Documentation
 This provides a link to the main page for the Marxan Web documentation.  
