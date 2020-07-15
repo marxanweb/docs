@@ -171,5 +171,25 @@ npm run deploy
 ## Building new user interfaces on Marxan data
 ### marxan-server API
 ### Authentication
+Authentication in marxan-server is done using secure cookies and so once authentication has succeeded then any API request can be made. Examples for Python and Javascript are given below.  
+
+#### Python
+To authenticate to a Marxan Server instance and make an authenticated request, the following stub code can be used as an example:
+
+```
+import requests
+from urllib.parse import urlparse
+TEST_URL = "https://andrewcottam.com/marxan-server/getPUData?user=valeriepmculty&project=Test%20Project%20Val&puid=17917"
+#authenticate
+parsed = urlparse(TEST_URL)
+domain = parsed.scheme + "://" + parsed.netloc
+r = requests.get(domain + "/marxan-server/validateUser?user=admin&password=password", timeout=2, headers={'referer': domain}, verify=False)
+#make the request
+r2 = requests.get(TEST_URL, headers={'referer': domain}, cookies=r.cookies, verify=False)
+print(r2.json())
+```
+
+#### Javascript
+
 
 ## Linking desktop GIS to the Marxan database
