@@ -103,6 +103,9 @@ Setting this to True will disable all security on the server. This can be useful
 ##### DISABLE_FILE_LOGGING
 Set to True to disable all logging to file.  
 
+##### ENABLE_RESET
+Set to True to enable a server reset. A server reset will reset a Marxan Server instance to the original install condition, including restoring the original database and removing all users. This is useful for resetting data before running a training course.  
+
 #### user.dat
 The user.dat file is used to manage user settings in Marxan Web and most of the settings are managed in the Marxan Web application. However, they can be set manually if there are issues with a users settings.  
 
@@ -120,6 +123,9 @@ The name of the default base map that the user has selected.
 
 ##### ROLE 
 The current role for the user.
+
+##### REPORTUNITS
+The default report unit to use for reporting areas in various parts of the application.  
 
 #### runlog.dat
 The runlog.dat provides a log of all of the runs that have been done in the marxan-server instance. In some cases where the server crashed or quit unexpectedly, there may be logs in the run that were not terminated properly. These records can be manually deleted from the log if required.    
@@ -194,16 +200,32 @@ This log shows diagnostic information about the marxan-server software including
 
 ### Routine tasks
 #### Starting/stopping marxan-server
-marxan-server runs as a Python script from the marxan-server folder and on Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. It can also be started manually (for other operating systems or if you want to start it manually on Windows):  
+##### Starting on Unix/Mac
+To start Marxan Server, run the unix_startup.sh script:
 
-- Navigate to the marxan-server folder
-- Start the marxan-server by entering python marxan-server.py
+```
+cd marxan-server
+sudo unix_startup.sh
+```
 
-You should see the marxan-server log output - for more information see [marxan-server log](#marxan-server-log).  
+##### Starting on Windows
+On Windows installations it will be started automatically when you click on the Launch Marxan Web shortcut. 
 
- marxan-server can be stopped using one of the following methods:
 
- - If the marxan-server log is visible, then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
+##### Manual start
+The Server can also be started directly using the python file:  
+
+```
+cd marxan-server
+python marxan-server.py
+```
+
+Starting it directly shows the log directly but should not be used on VMs that disconnect from their clients as this will shut down the python process. In this case it is better to use the unix_startup.sh script.
+
+##### Stopping
+marxan-server can be stopped using one of the following methods:
+
+ - If you are connected to the running instance (i.e. the marxan-server log is visible), then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
  - If the marxan-server log is not visible:
   -  Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
   -  Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
@@ -223,15 +245,27 @@ You should see the following if marxan-server is running properly:
 If you don't then you can try to clear your site cache and service worker. For more information see [Clearing cache and service worker](#clearing-cache-and-service-worker). 
 
 ### Updates 
-To install software updates to marxan-server:  TODO This needs updating
+#### Updates to marxan-server
+To install software updates to marxan-server:  
 
-- Stop marxan-server - see [Starting/stopping marxan-server](#startingstopping-marxan-server)
-- In the command prompt, navigate to the marxan-server folder
-- Type git pull
-- Start marxan-server and check that the version is updated in the marxan-server log - see [marxan-server log](#marxan-server-log)
+```
+cd marxan-server
+unix_update.sh
+```  
 
+At the end of the update, the update script will run a set of unit tests to ensure that everything is working properly.
+
+#### Updates to marxan-client
 To install software updates to marxan-client:  
 
 - In the command prompt, navigate to the marxan-client folder
 - Type git pull
 - Refresh the Marxan Web page in the browser (you may need to clear your browser cache)
+
+### Unit tests
+Unit tests can be run for marxan-server in the following way:
+
+```
+cd marxan-server
+unittest.sh
+```
