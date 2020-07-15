@@ -316,7 +316,7 @@ To upload existing spatial data from the local machine onto the server as new fe
 
 The only prerequisite for importing an existing feature is that the feature must have the necessary projection information file present - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).
 
-##### Importing from web  
+##### Importing from the web  
 Features can also be imported from common web formats such as Web Feature Services. 
 
 - Click on the Import button and select From the web. 
@@ -340,6 +340,19 @@ When the GetCapabilities resource has been loaded click next.
 
 <img src='images/window_import_from_web_04.png' title='Import from web window' class='docsImage'>
 
+##### Importing from the Global Biodiversity Information Facility (GBIF)
+Features can also be directly imported into Marxan Web from GBIF who provide species observation data through public, free and open Web Services. Currently GBIF hold more than 1 billion species occurrence records and although these records do not represent the extent of occurrence or area of occupancy for a species, they can be used in specific use cases where appropriate.
+
+To import data from GBIF:
+- Click on the Import button and select From the Global Biodiversity Information Facility.  
+
+<img src='images/window_import_from_gbif.png' title='Import from GBIF window' class='docsImage'>
+
+- Type at least 3 letters in the search box to find matching names from GBIF
+- Select a species and click OK
+
+The GBIF occurrence records are imported as a single feature - currently all records are buffered to 100m from their original lat/lng value although this will change in a future version.  
+
 ##### Drawing features on screen
 Another way to capture new features within Marxan Web is to digitise them directly on the map using the mouse. To do this:
 - In the Features window click on New and Draw on screen   
@@ -349,14 +362,11 @@ Another way to capture new features within Marxan Web is to digitise them direct
 
 <img src='images/digitise.png' title='Drawing a new feature on the map' class='docsImage'>
 
-##### Adding features from the Global Biodiversity Information Facility (GBIF)
-The ability to add new features from GBIF will be made available in future versions of Marxan Web, but the workflow will be to present the user with a list of species names that they can select and then data for those species will be added into the project.  The user would be able to control how that data is represented in the project, for example whether to use squares that represent the species occurrence data at the correct resolution or whether to draw a convex hull around the points - or some other representation.  
-
 ##### Adding features from the IUCN Red List of Threatened Species
-Adding features from the IUCN Red List will also be made available in future versions of Marxan Web and the workflow will be similar to that for GBIF data.  
+Adding features from the IUCN Red List will be made available in future versions of Marxan Web and the workflow will be similar to that for GBIF data.  
 
 #### Deleting features
-Deleting features is only possible as an admin user and then only when the features are not in use in any projects and they are not system supplied. System supplied features are ones that are used in case studies and tutorials and therefore cannot be deleted. If the features are in use, then a window will list all of the projects where they are being used.  
+Deleting features is only possible as an admin user and then only if the features are not in use in any projects and they are not system supplied. System supplied features are ones that are used in case studies and tutorials and therefore cannot be deleted. If the features are in use, then a window will list all of the projects where they are being used.  
 
 <img src='images/window_failed_to_delete_01.png' title='Failed to delete feature' class='docsImage'>
 
@@ -364,48 +374,46 @@ Deleting features is only possible as an admin user and then only when the featu
 In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
 
 ### Feature properties window
-The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the best solution by default). To show the feature properties window, click on Properties in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
+The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the last solution by default). To show the feature properties window, click on Properties in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
 
 <img src='images/feature_properties.png' title='Feature properties window' class='docsImage'>
 
 The information that is shown for a feature is summarised below. Note that not all of this information is shown for features in an imported Marxan project. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available)
 - Target percent - the target percentage for the feature for the Marxan run. This can be edited in place by typing a value and pressing ENTER.  
 - Species penalty factor - the weighting given to the feature. This can be edited in place by typing a value and pressing ENTER.
-- Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the  planning unit count and area.
+- Preprocessed - a flag to indicate if the feature has already been preprocessed (i.e. intersected with the planning grid). If the feature has already been preprocessed then there will be statistics for the planning unit count and area.
 - Planning unit count - the total number of planning units which intersect the feature.
 - Planning unit area - the total area of the feature in the planning grid (in square kilometers). 
 - Target area - the area that needs to be protected to meet the target percentage for the feature (in square kilometers).
 - Area protected - the total area of the feature protected in the current solution (in square kilometers). This is only available after a run has completed. If the area protected is less than the target area then this figure will be shown in red. In some cases the area protected may appear to be the same as the target area and yet the figure is shown in red. This is because of rounding issues in showing the figure in the table and if you hover over the area protected you will see the actual un-rounded area of the feature.  
 
 ### Showing features on the map
-For new projects that have been created in Marxan Web, the features can be shown on the map as polygons.  Imported projects do not support showing feature polygons on the map - for more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available) To show a feature on a map, click on the link in the features context menu. Only one feature can be shown in the map at any time.  
+For new projects that have been created in Marxan Web, the features can be shown on the map as polygons.  Imported projects do not support showing feature polygons on the map - for more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available) To show a feature on a map, either click the feature name or click on the link in the features context menu. The feature being mapped is added to the map legend.    
 
-For all projects, the extent of the feature can also be mapped by clicking 'Outline planning units where the feature occurs' in the context menu - this shows those planning units which intersect the features polygon. Only one feature can be shown at a time with its planning units.  
+<img src='images/legend_features.png' title='Mapped features being shown in the legend' class='docsImage'>
+
+For all projects, the extent of the feature can also be mapped by either holding down ALT and clicking on the feature name or clicking 'Outline planning units where the feature occurs' in the context menu - this shows those planning units which intersect the features polygon. The feature being mapped is added to the map legend.  
+
+<img src='images/legend_feature_planning_units.png' title='Mapped features being shown in the legend' class='docsImage'>
 
 ## Planning grids
 ### Understanding planning grids
 Planning grids provide the geographic framework for the systematic conservation planning process. They define the geographic extent and the resolution of the individual planning units that make up the grid and it is this grid which forms the basis of the Marxan analysis. Within Marxan Web there are various tools for creating and managing planning grids and the size and type of planning grid used has an important bearing on the analysis and also on the real-world implementation of the new reserve system. 
 
 ### The planning grids window
-The planning grids window provides information on the planning grids that are available on the server. The table shows the following information:
-
-- Name - the user-friendly name of the planning grid. If you hover over the name you will also see the internal unique identifier for the planning grid. This is also the unique identifier for the dataset on Mapbox.
-- Description - a brief description of the planning grid. Hover over the description to see the full text.
-- Country - The country that the planning grid covers (not available for imported planning grids).
-- Domain - Whether the planning grid relates to marine or terrestrial areas (not available for imported planning grids).
-- Area - The area of the planing units that make up the planning grid (in square kilometers).  
+The planning grids window provides information on the planning grids that are available on the server. The table shows the information on the name, description, when the grid was created and who created it. Planning grids can be filtered by matching on a text string (see [Filtering Items](#filtering-items). If you hover over the name you will also see the internal unique identifier for the planning grid. This is also the unique identifier for the dataset on Mapbox.  
 
 <img src='images/window_planning_grids.png' title='Planning grids window' class='docsImage'>
 
 At the bottom of the planning grids window is a toolbar that allows you to manage planning grids. These tools are described in the following sections. To view more details on an individual planning grid, click on the ellipsis button on the right hand side of the table.  
 
 ### The planning grid details window
-The planning grid details window shows you all of the information for an individual planning grid and shows a preview of the planning grid on a map. Additional internal information on the planning grid is available by clicking on the down arrow.  
+The planning grid details window shows you all of the information for an individual planning grid and shows a preview of the planning grid on a map. Additional internal information on the planning grid is available by clicking on the more.. link.  
 
 <img src='images/window_planning_grid_details.png' title='planning grid details window' class='docsImage'>
 
 ### Managing planning grids
-Planning grids can be created, imported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
+Planning grids can be created, imported, exported and deleted using the tools in the planning grids window. Not all tools are available for all roles. For more information see [Roles](#roles).  
 
 #### Creating planning grids
 There are two basic types of planning grid: ones created in Marxan Web and ones created externally and imported from the local machine. Both of these can be used in projects and the only difference is that creating planning grids externally provides more flexibility in defining the geographic extent and characteristics of the planning units. For example, you may want to conduct a project over a province or state rather that a whole country and in this case you would have to create the planning grid using an external tool and import it.  
@@ -426,7 +434,7 @@ To create a new planning grid in Marxan Web, click on the New button in the plan
 Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
 
 ### The Planning Units tab
-When a planning grid is used within a project, by default all of the planning units within the grid are used in the analysis. If you want to change how these planning units are used, this is done through the Planning Units tab. This tab allows you to either manually include or exclude individual planning units, or to include all planning units which contain existing protected areas. These are described in the sections below.  
+When a planning grid is used within a project, by default all of the planning units within the grid are used in the analysis with the same cost. If you want to change how these planning units are used, this is done through the Planning Units tab. This tab allows you to either manually include or exclude individual planning units, include all planning units which contain existing protected areas and to set custom costs for planning units. These are described in the sections below.  
 
 <img src='images/tab_planning_units.png' title='Planning Units tab' class='docsImage'>
 
