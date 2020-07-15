@@ -518,7 +518,7 @@ The Show planning unit popup is used to control the visibility of the popup with
 #### Profile
 The Profile window allows users to update their profile information.  
 
-<img src='images/windows_user_profile.png' title='Profile window' class='docsImage'>
+<img src='images/window_user_profile.png' title='Profile window' class='docsImage'>
 
 #### Change password
 The Change password window allows users to update their password. Users will have to use this new password the next time they log into Marxan Web.  
