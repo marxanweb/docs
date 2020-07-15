@@ -96,7 +96,7 @@ To create a new project using the New Project wizard:
 
 The project will now be created and opened and can be run immediately.  
 
-#### Importing Marxan Web project
+#### Importing Marxan Web projects
 Projects exported from Marxan Web as .mxw files can be imported using the Import Marxan Web project window. 
 
 To import a Marxan Web project:
