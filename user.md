@@ -179,6 +179,8 @@ The following list is the full set of functions that are available in the contex
 #### Adding and removing features  
 To add or remove features in a project click on the +/- button in the features tab and select which features you want to include in the project. Features that are included in the project will be listed in alphabetical order. Features can only be added or removed in projects that were created with the New Project Wizard and not for imported projects. For more information see [Why do imported projects have less functions available?](#why-do-imported-projects-have-less-functions-available).  
 
+<img src='images/window_add_remove.png' title='Adding/removing features window' class='docsImage'>
+
 #### Viewing feature metadata  
 In the context menu click Properties to view all of the feature metadata. For more information see [Feature Properties window](#feature-properties-window).  
 
@@ -190,6 +192,8 @@ Individual feature targets can be changed in one of two ways:
 <img src='images/edit_feature_target.png' title='Feature tab' class='docsImage'>
 
 To change targets for all features, click on the target icon underneath the list of features and set a value.  
+
+<img src='images/window_targets.png' title='Targets for all features' class='docsImage'>
 
 #### Changing feature penalty factor  
 In the Feature Properties window, enter a new value in the Species Penalty Factor field and click OK.  
@@ -622,7 +626,7 @@ The identify features window shows a list of features that occur at that point t
 ### Changing how the results are displayed
 The display of the results in the map can be configured using the Classification window, accessible from the gear icon in the Results on the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the sum of solutions are symbolised, change any of the parameters in the Classification window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded. 
 
-<img src='images/legend_change_symbology.png' title='Classification window' class='docsImage'>
+<img src='images/window_classification.png' title='Classification window' class='docsImage'>
 
 ### Changing transparency of layer
 To change the transparency of layers in the map, click on the slider in the legend and move it to the right (more opaque) or the left (more transparent). To show/hide the layer click on the eye icon.  
@@ -643,6 +647,19 @@ In addition, spatial data needs to be topologically valid to be used within Marx
 Any spatial data that is imported into Marxan Web is stored in a database on the server and it is also uploaded to Mapbox to make the high performance visualisation possible. This process is done when the data are first uploaded and once this has finished it does not need to be done again. The process should not take more than 1-2 minutes and you can continue using Marxan Web while the process is ongoing.  
 
 ## Tools and analyses
+The tools and analyses menu contains additional analytical and administrative tools for working with Marxan Web. The specific items that are shown will depend on the users role and whether the current project is a Marxan Web project or an imported project. The image below shows all of the available tools which are described in the following sections.   
+
+<img src='images/tools_menu.png' title='Tools Menu' class='docsImage'>
+
+### Users (admin users only)
+See [The Users window](#the-users-window).  
+
+### Run Log
+See [the Run log](#the-run-log).
+
+### Reset (admin users only)
+Reset is an administrative tool designed for Marxan Web trainers to reset the Marxan Server instance back to its default state. For example, if a training session is being run and all of the users and their projects from a previous training sessions want to be removed, the reset tool can be used. This is only available where the Marxan Server instance has enabled it. For more information see the [Administrator Documentation](admin.html).  
+
 ### Gap analysis window
 <img src='images/window_gap_analysis_01.png' title='Gap analysis window' class='docsImage'>
 
@@ -651,7 +668,14 @@ The gap analysis window shows the results of a gap analyis using the features an
 - The designation is not 'World Heritage Site (natural or mixed)' or 'Biosphere Reserve'
 - Protected areas that are represented as points - although these have an attribute for the area, there is no way of knowing where they are and so any gap analysis based on these would be higher uncertainty.  
 
-The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).
+The features that occur within the country are then intersected with this dissolved protected area layer to find the area that is protected. The representation score is a measure of the overall success if achieving representation and is calculated according to the Mean target achievement given in [Jantke <i>et al</i>, 2019](#references).  
+
+The Gap Analysis can also be shown as a graph as in the following screenshot.    
+
+<img src='images/window_gap_analysis_02.png' title='Gap analysis window' class='docsImage'>
+
+### Cleanup server (admin users only)
+Cleanup server is another administrative tool to clean up resources on the server that may have been created and are no longer required.  
 
 ## Reports and outputs
 Future versions of Marxan Web will have features to produce a downloadable report which presents information on the project, features, targets and shows the map results.  
