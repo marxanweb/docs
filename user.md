@@ -345,15 +345,15 @@ There are two basic types of planning grid: ones created in Marxan Web and ones 
 
 Whatever type of planning grid that you create, at the end of the creation process the planning grid will be uploaded to Mapbox - for more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox).   
 
+##### Importing existing planning grids
+To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
+
+<img src='images/window_import_planning_grid.png' title='Importing existing planning grids' class='docsImage'>
+
 ##### Creating new planning grids using Marxan Web 
 To create a new planning grid in Marxan Web, click on the New button in the planning grids window. This opens the New Planning Grid window where you will need to select the necessary information to create the planning grid. For the area of interest, in future versions of Marxan Web you will be able to upload an area of interest which will define the geographic extent for the planning grid.  
 
 <img src='images/window_new_planning_grid.png' title='New planning grids window' class='docsImage'>
-
-#### Importing existing planning grids
-To import an existing planning grid into Marxan Web, click on the Import button in the planning grids window. This opens the Import Planning Grid window where you will need to provide a name for the planning grid and a zipped shapefile containing the spatial data. The shapefile must have a field called 'puid' (lowercase) and have a projection file associated with it - for more information see [Requirements for importing spatial data](#requirements-for-importing-spatial-data).  
-
-<img src='images/window_import_planning_grid.png' title='Importing existing planning grids' class='docsImage'>
 
 #### Deleting planning grids
 Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
