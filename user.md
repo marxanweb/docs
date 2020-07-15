@@ -596,11 +596,31 @@ The interactive map supports all of the usual web map features such as panning, 
 
 When the results of a Marxan run are shown in the map, users can click on planning units to see a list of all of the features that occur in that particular planning unit. 
 
+### Identifying items on the map
+Like traditional GIS systems the map also allows the identification of items by clicking on the map. The identify window shows the resulting items from the planning grid layer, protected area layer and feature layers. 
+
+#### Identify: Planning Units
+The identify planning units window summarises the metadata about the planning unit (including the type of planning unit and its cost) and the features and their areas that occur within that planning unit.  
+
+<img src='images/identify_planning_units.png' title='Identify  window' class='docsImage'>
+
+#### Identify: Protected areas
+The identify protected areas window shows a list of all of the protected areas that occur at that point and information on the designation, IUCN category and a link to their page on the protectedplanet website.  
+
+<img src='images/identify_protected_areas.png' title='Identify  window' class='docsImage'>
+
+#### Identify: Features
+The identify features window shows a list of features that occur at that point that are currently visible on the map.  
+
+<img src='images/identify_features.png' title='Identify  window' class='docsImage'>
+
 ### Changing how the results are displayed
 The display of the results in the map can be configured using the Classification window, accessible from the gear icon in the Results on the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the sum of solutions are symbolised, change any of the parameters in the Classification window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded.  
 
 ### Changing transparency of layer
 To change the transparency of layers in the map, click on the slider in the legend and move it to the right (more opaque) or the left (more transparent). To show/hide the layer click on the eye icon.  
+
+<img src='images/legend_change_opacity.png' title='Change opacity' class='docsImage'>
 
 ### Changing the basemap
 The basemaps that are used in Marxan Web include both traditional vector cartography and high resolution imagery. The vector data is provided by Open Street Map (OSM) which is a community-driven public dataset of the worlds geographic features. In many parts of the world it offers unrivalled detail on a whole range of geographic features which are updated on a rolling basis (including down to the street and house level). For more information see [OpenStreetMap](https://www.openstreetmap.org/). The imagery data comes from a variety of commercial providers, as well as open data from NASA, USGS, and others. For more information see [Mapbox Sources](https://www.mapbox.com/about/maps/#data-sources).  
