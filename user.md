@@ -300,13 +300,16 @@ All users can create new features using a number of different methods which are 
 To upload existing spatial data from the local machine onto the server as new features use the import from shapefile window. This steps you through the process of imported single or multiple features.  
 
 - Click on the Import button and select From a shapefile. 
-- In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next. 
+- In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next.  
+
 <img src='images/window_import_features_01.png' title='Import shapefile window' class='docsImage'>
 
-- In the second step, choose whether you want to create a single feature or a set of features from the shapefile, then click next. 
+- In the second step, choose whether you want to create a single feature or a set of features from the shapefile, then click next.  
+
 <img src='images/window_import_features_02.png' title='Import shapefile window' class='docsImage'>
 
-- The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features. 
+- The final step depends on what you chose in step 2. If you are importing a single feature, then you will have to enter a name for that feature and a description. If you are importing multiple features then choose the field in the shapefile that will be used to split the data into separate features.  
+
 <img src='images/window_import_features_03.png' title='Import shapefile window' class='docsImage'>
 
 - Click finish to import the features from the shapefile. If the feature with the name specified already exists, then an error message will be shown at the bottom of the screen and the feature name will have to be updated.  
@@ -317,20 +320,24 @@ The only prerequisite for importing an existing feature is that the feature must
 Features can also be imported from common web formats such as Web Feature Services. 
 
 - Click on the Import button and select From the web. 
-- In the first step of the wizard, select the type of web resource and click next. 
+- In the first step of the wizard, select the type of web resource and click next.  
+
 <img src='images/window_import_from_web_01.png' title='Import from web window' class='docsImage'>
 
 - In the next step, enter the endpoint of the Web Service. For Web Feature Services, paste in the url of the WFS GetCapabilities resource and click next. For example, the following WFS endpoint can be used to import Crane data [Harris <i>et al</i>, 2019](#references)):  
 ```
 https://dservices2.arcgis.com/7p8XMQ9sy7kJZN4K/arcgis/services/Cranes_Species_Ranges/WFSServer?service=wfs&request=getcapabilities
 ```
-When the GetCapabilities resource has been loaded click next. 
+When the GetCapabilities resource has been loaded click next.  
+
 <img src='images/window_import_from_web_02.png' title='Import from web window' class='docsImage'>
 
-- Select the feature type from the list of available feature types and click next. 
+- Select the feature type from the list of available feature types and click next.  
+
 <img src='images/window_import_from_web_03.png' title='Import from web window' class='docsImage'>
 
-- Enter a name and description for the feature that will be created and click Finish.
+- Enter a name and description for the feature that will be created and click Finish.  
+
 <img src='images/window_import_from_web_04.png' title='Import from web window' class='docsImage'>
 
 ##### Drawing features on screen
