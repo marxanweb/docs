@@ -430,6 +430,9 @@ To create a new planning grid in Marxan Web, click on the New button in the plan
 
 <img src='images/window_new_planning_grid.png' title='New planning grids window' class='docsImage'>
 
+#### Exporting planning grids
+Planning grids can be exported to a zipped shapefile using the Export button. This is useful for creating custom cost profiles. For more information see [ Creating a cost profile](#creating-a-cost-profile).  
+
 #### Deleting planning grids
 Deleting planning grids can only be done by admin users and should be done with great caution as those grids may be in use in any number of projects on that server. If they are deleted then the projects that reference them will no longer work correctly and it may not be possible to repair them.  
 
@@ -438,7 +441,10 @@ When a planning grid is used within a project, by default all of the planning un
 
 <img src='images/tab_planning_units.png' title='Planning Units tab' class='docsImage'>
 
-#### Including/excluding individual planning units
+#### Understanding planning unit status and cost  
+All planning units have two attributes that influence the results of a Marxan analysis: status and cost. The status of a planning unit determines whether it is included in the results (i.e. locked in) or excluded (i.e. locked out). The default status is neither included or excluded but determined during the Marxan analysis. The cost of a planning unit is not a hard value that locks in/out a particular planning unit, but rather a weighting to subtely influence the results. 
+
+#### Status: Manually including/excluding individual planning units
 Manually including or excluding individual planning units is useful where a real-world issue affects where new protected areas can be designated. For example, if you know that a particular planning unit contains a restricted military area and cannot be designated, then you could manually exclude that planning unit from the project.  
 
 If you want to manually include or exclude individual planning units from the project, then click on the lock icon. The planning units are now in edit mode (disabling the Project and Features tab), where you can change the status of any of the units to be one of the following: 
@@ -448,21 +454,55 @@ If you want to manually include or exclude individual planning units from the pr
 - locked out of the reserve system, i.e. the planning unit will be absent in every solution.
 
 To change the status of a planning unit, click on the map. The status will cycle between the three states. If you want to reset the status to the default then right click on the planning unit. If you want to reset all of your manual edits, click on the eraser button.  
-When you have finished editing the planning units, click on the lock icon again and the statuses will be saved. You can now run the project with these updated statuses. It is important to note that these changes to the planning units only appy to the current project and not to the planning grid itself. Creating a new project with the same planning grid will not show any of the manual changes that have been made.  
+When you have finished editing the planning units, click on the save icon and the statuses will be saved. You can now run the project with these updated statuses. It is important to note that these changes to the planning units only appy to the current project and not to the planning grid itself. Creating a new project with the same planning grid will not show any of the manual changes that have been made.  
 
-#### Including existing protected areas
+#### Status: Including existing protected areas
 Another method of changing the status of planning units, is to include all existing protected areas in the project. By including protected areas in the project you are ensuring that the existing protected areas network is part of your overall reserve design. See [Protected Areas information](#protected-areas-information) for information on the source of the protected areas data.  
 
-To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. The 'All' category includes all IUCN Categories including the category 'Not Reported'. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories). The map will update to show the protected areas within that particular IUCN category - terrestrial protected areas are shown in green and marine protected areas are shown in blue.  
+To include existing protected areas in your project, select the appropriate IUCN protected areas category from the list. The 'All' category includes all IUCN Categories including the categories 'Not Reported', 'Not Assigned' and 'Not Applicable'. For more information on IUCN categories, see [Protected Area Categories](https://www.iucn.org/theme/protected-areas/about/protected-area-categories). The map will update to show the planning units that include protected areas with that particular IUCN category.  
 
-<img src='images/protected_areas_01.png' title='Protected areas on the map' class='docsImage'>
+<img src='images/map_locked_in_out.png' title='Protected areas on the map' class='docsImage'>
 
-If this is the first time that the protected areas have been selected, then preprocessing will need to be done on those protected area boundaries. For more information see [Preprocessing protected areas](#preprocessing-protected-areas).  
+If this is the first time that the protected areas have been locked in, then preprocessing will need to be done on those protected area boundaries. For more information see [Preprocessing protected areas](#preprocessing-protected-areas).  
 
 If you have already made some manual edits to the planning units and these overlap with the planning units that contain protected areas, then the manual edit will take precedence.  
+#### Costs
+By default all project in Marxan Web have an equal area cost surface which means that planning units with the same area have the same cost. All planning units created in Marxan Web are equal area and so by definition costs are equal. You can create your own cost surfaces and import them for use within Marxan Web. The following sections describe how to do that.
+
+##### Creating a cost surface
+Cost surfaces are specific to individual planning grids and the first step to creating a cost surface is to download the planning grid that you want to create a cost surface for. For more information see [Exporting planning grids](#exporting-planning-grids). Once you have downloaded and unzipped the planning grid shapefile create a .cost file that can be imported and used in Marxan Web. The following steps describe a generic workflow that should be followed in a desktop GIS package, e.g. ArcGIS or QGIS.  
+
+- Add the planning grid shapefile to a map
+- Add a field to the planning grid called cost
+- Populate the cost field with whatever costs you want to use (based on your own analysis or intersections)
+- Export the shapefile to a .csv text file with the extension .cost
+- Ensure that the text file has a structure like the following:
+
+```
+id,cost
+1,2000000
+2,2000000
+...
+```
+
+##### Importing a cost surface
+To import and use a custom cost surface in Marxan Web use the following steps:
+
+- In the Use Cost surface drop-down box, select Custom..  
+
+<img src='images/window_costs.png' title='Costs window' class='docsImage'>
+
+- In the Costs Window, click on Import.  
+- In the Import Cost Surface window select the .cost file that you created  
+
+<img src='images/window_import_costs.png' title='Import Cost surface window' class='docsImage'>
+
+- Click OK to close the Import Cost Surface window and click OK to close the Costs window
+
+You can now select and use the custom cost surface from the Cost surface drop-down box.  
 
 #### Protected Areas information
-Marxan Web uses protected areas information from the World Database of Protected Areas (WDPA) and the citation and version of the WDPA that is used is indicated in the Help | About window and at the bottom of the map (see also [Acknowledgements](#acknowledgements)). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
+Marxan Web uses protected areas information from the World Database of Protected Areas (WDPA) and the citation for the WDPA that is used is indicated in the Help | About window. The version of the WDPA that is in use depends on the version that is available in the Marxan Server and is shown in the Server Details window (see [Server Details](#server-details)) and at the bottom of the map (see also [Acknowledgements](#acknowledgements)). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
 
 #### Preprocessing protected areas
 Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab. 
@@ -512,7 +552,7 @@ The role 'User' is the default role for new registered users in Marxan Web. This
 Admin users have the most privilages in Marxan Web and have full access to all features including managing users. Each server will have at least one admin user and this role is responsible for managing access for all of the other registered users. Administration of Marxan Web is covered in more detail in the [Administrator Documentation](admin.html).  
 
 ### The User menu
-The User menu allows you to view and update information on the currently logged on user and to set general settings for Marxan Web. Hovering over the User menu will show you the username of the currently logged on user and their role. The items in the menu below are described in the following sections.  
+The User menu allows you to view and update information on the currently logged on user and to set general settings for Marxan Web. Click on the user name to show the User menu. The items in the menu are described in the following sections.  
 
 #### Settings 
 The Settings window provides access to general settings for the Marxan Web tool and these settings are saved between sessions.  
@@ -521,7 +561,7 @@ The Settings window provides access to general settings for the Marxan Web tool 
 
 The Mapbox basemap style setting allows users to select their default basemap from a list including vector basemaps and imagery basemaps. For more information see [Changing the basemap](#changing-the-basemap).  
 
-The Show planning unit popup is used to control the visibility of the popup with information about each of the planning units. With this emabled whenever the user hovers over a planning unit, a window is shown with information about that planinng unit including the number of times it is included in the summed solutions. For more information see [Understanding the summary of solutions](#understanding-the-summary-of-solutions).  
+The Area Units setting controls how areal information is shown in Marxan Web, for example in the Feature Properties window or the Gap Analysis window.  
 
 #### Profile
 The Profile window allows users to update their profile information.  
@@ -534,7 +574,7 @@ The Change password window allows users to update their password. Users will hav
 <img src='images/window_change_password.png' title='Change password window' class='docsImage'>
 
 #### Logout
-Logs a user out of the system.  
+Logs a user out of the Marxan Server.    
 
 ## Mapping
 ### Understanding mapping
@@ -557,9 +597,10 @@ The interactive map supports all of the usual web map features such as panning, 
 When the results of a Marxan run are shown in the map, users can click on planning units to see a list of all of the features that occur in that particular planning unit. 
 
 ### Changing how the results are displayed
-The display of the analysis results in the map can be configured using the Legend Settings window, accessible from the bottom left corner of the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the planning units are symbolised, change any of the parameters in the Legend Settings window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded.  
+The display of the results in the map can be configured using the Classification window, accessible from the gear icon in the Results on the Legend tab. This window allows you to set the classification method that is used to color the various planning units in the results. At the top of the classification window is a frequency histogram which shows the distribution of the summed solutions and their frequency. For more information about the summed solutions see [Understanding the summary of solutions](#understanding-the-summary-of-solutions). To change how the sum of solutions are symbolised, change any of the parameters in the Classification window to immediately see the results. Once you are satisfied with the symbols click OK. These settings are saved with the project and will be reloaded when the project is reloaded.  
 
-To change the transparency of the results layer in the map, click on the slider underneath the legend and move it to the right (more opaque) or the left (more transparent). This also applies to the protected areas layer which is shown when a set of protected areas is selected in the Planning Units tab. For more information see [Including existing protected areas](#including-existing-protected-areas).  
+### Changing transparency of layer
+To change the transparency of layers in the map, click on the slider in the legend and move it to the right (more opaque) or the left (more transparent).  
 
 ### Changing the basemap
 The basemaps that are used in Marxan Web include both traditional vector cartography and high resolution imagery. The vector data is provided by Open Street Map (OSM) which is a community-driven public dataset of the worlds geographic features. In many parts of the world it offers unrivalled detail on a whole range of geographic features which are updated on a rolling basis (including down to the street and house level). For more information see [OpenStreetMap](https://www.openstreetmap.org/). The imagery data comes from a variety of commercial providers, as well as open data from NASA, USGS, and others. For more information see [Mapbox Sources](https://www.mapbox.com/about/maps/#data-sources).  
@@ -590,8 +631,8 @@ Future versions of Marxan Web will have features to produce a downloadable repor
 
 GIS users can directly connect to the database of a local installation of Marxan Web and produce their own maps and reports by combining this Marxan data with their own local data layers. For more information see the [Developer Documentation](dev.html).  
 
-## Server details
-The Server details show the information about the server that the user is currently connected to, including the server name, description, host, operating system, version of the marxan-server and the version of the World Database of Protected Areas.  
+## Server Details
+The Server Details show the information about the server that the user is currently connected to, including the server name, description, host, operating system, version of the marxan-server and the version of the World Database of Protected Areas. To access the Server Details window, click on the server name in the toolbar.  
 
 <img src='images/window_server_details.png' title='Server details window' class='docsImage'>  
 
