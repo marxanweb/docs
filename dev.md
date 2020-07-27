@@ -52,7 +52,7 @@ The most important of these is the performance: the MapboxGL technology means th
 Finally, the mapping data itself is delivered through Vector Tiles that are sourced from Mapbox and ESRI (and other providers in the future). These Vector Tiles are based on OpenStreetMap data and all of the feature attributes are sent to the browser with the spatial data meaning that they can be styled and queried on-the-fly in the browser.  
 
 ## marxan-server development
-This section provides a quick guide to getting going in extending the marxan-server software. Full documentation on all of the methods, functions, classes and variables for marxan-server is available <a href='marxan-server.html'>here</a>.  
+This section provides a quick guide to getting going in extending the marxan-server software. Full documentation on all of the methods, functions, classes and variables for marxan-server is available <a href='marxan-server.html' target='_blank'>here</a>.  
 
 Firstly, in order to extend the marxan-server software you will need to fork the GitHub repo to be able to make changes locally and then submit them back to the main repo (through pull requests). To fork the repo in GitHub, goto the [repo](https://github.com/marxanweb/marxan-server) and follow the instructions [here](https://help.github.com/en/articles/fork-a-repo).  You will also need to install all of the prerequisites (e.g. Python libraries and PostGIS) - for more information see the installation instructions for the [marxan-server](https://github.com/marxanweb/marxan-server) repo.  
 
