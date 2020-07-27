@@ -227,8 +227,12 @@ marxan-server can be stopped using one of the following methods:
 
  - If you are connected to the running instance (i.e. the marxan-server log is visible), then press CTRL+C or CTRL+Fn+Pause or close the window in which it is running
  - If the marxan-server log is not visible:
-  -  Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
-  -  Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
+    -  Connect to the running instance using the following and then stop it as described above.
+ ```
+ sudo screen -r
+ ```
+    -  Use the operating system command to find the process ID of the running Python process, e.g. on Windows use TASKLIST and look for the python.exe process, on Unix use ps -A
+    -  Kill that process using the operating system command, e.g. on Windows use TASKKILL /pid <pid>, on Unix use kill -9 <pid>
 
 #### Starting/stopping Postgresql/PostGIS server
 If the PostGIS server is stopped for any reason, it can be restarted using the operating system specific commands. For more information search online for starting/stopping the Postgresql/PostGIS server.  
