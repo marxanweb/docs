@@ -32,7 +32,7 @@ This following is a typical simplified workflow for a running Marxan Web applica
 
 ### Technologies
 #### marxan-server
-marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight cross-platform server that supports SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the marxan-server.py file in the marxan-server folder and when you run this file you are starting marxan-server.    
+marxan-server uses the Tornado Web Server for communication between the marxan-client and marxan-server. Tornado is a lightweight cross-platform server that supports asynchronous processing, SSL, WebSockets and server extensions and allows you to define endpoints that map a REST url endpoint to an internal Python class. For more information see [Creating REST services](#creating-rest-services). The implementation of these REST endpoints is in the marxan-server.py file in the marxan-server folder and when you start marxan-server, you are running this file with Tornado.      
 
 The PostGIS database is used to manage all of the spatial data that is created in Marxan Web and is the main processing engine for any intersections or other analyses. This fully-featured database means that any future spatial requirements can be met easily with the existing bundled database. Within marxan-server the connections to the database are managed using the psycopg2 Python library and the connection settings are set in the server.dat file. For more information see [Administrator Documentation - Database configuration](admin.html#database-configuration) and [Interacting with PostGIS](#interacting-with-postgis).  
 
@@ -62,11 +62,14 @@ Now that repo is forked you can edit the marxan-server.py file to add your own e
 The following section in the marxan-server.py file is used to map between REST endpoints and Python classes that implement that feature. So, for example in the code below the url which ends in /marxan-server/testTornado will call the testTornado class and use that class to return the data to the client. It's as simple as that! Any number of new REST endpoints can be added to this list in order to create new features in marxan-server. 
 
 ```
-def make_app():
-    return tornado.web.Application([
-        ("/marxan-server/testTornado", testTornado),
-        ..
-        ..
+class Application(tornado.web.Application):
+    """Tornado Application class which defines all of the request handlers.
+    """
+    def __init__(self):
+        handlers = [
+            ("/marxan-server/testTornado", testTornado),
+            ..
+            ..
         
 class testTornado(MarxanRESTHandler):
     def get(self):
@@ -113,13 +116,18 @@ There are three other tables in PostGIS that are used by marxan-server to create
 - gaul_2015_simplified_1km - Contains the country boundaries of the world
 - gaul_eez_dissolved - Contains the union of the marine and terrestrial extents for all countries in the world
 
-To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc. This class is available through the singleton object called pg which maintains a pool of asynchronous database connections.   
+Finally, the following tables manage other data in Marxan Web:  
+
+- gap_ - Dissolved protected areas for a country that are used in gap analyses  
+- scratch_ or tmp_ - temporary feature classes that can be safely deleted at any time  
+
+To help interacting with the PostGIS database, you can use the PostGIS class which provides some convenience methods for executing queries, getting data frames, importing shapefiles, creating indices etc. This class is available through a singleton object called pg which maintains a pool of asynchronous database connections.   
 
 ### Interacting with Mapbox
 All new features and planning grids that are created in marxan-server have to be uploaded to Mapbox to enable visualisation on the map - and the unique identifiers created in marxan-server are used to uniquely identify those tilesets in Mapbox. There are some convenience classes and methods for interacting with Mapbox in marxan-server including: _uploadTilesetToMapbox, _uploadTileset and _deleteTileset.  
 
 ### Creating WebSocket extensions
-For most purposes in marxan-server, creating extensions by creating new REST services should be sufficient. However, for more long-running or complex extensions WebSockets should be used. WebSockets provide a mechanism for communication between marxan-client and marxan-server that is stateful and persistent so messages can be sent back and forth at regular intervals. The marxan-client uses WebSocket classes to update the Log tab in Marxan Web with information on the progress of long-running jobs, e.g. a Marxan run or the import of an existing Marxan project. 
+For most purposes in marxan-server, creating extensions by creating new REST services should be sufficient. However, for more long-running or complex extensions WebSockets should be used. WebSockets provide a mechanism for communication between marxan-client and marxan-server that is stateful and persistent so messages can be sent back and forth at regular intervals. The marxan-client uses WebSocket classes to update the Log tab in Marxan Web with information on the progress of long-running jobs, e.g. a Marxan run or the import of an existing Marxan project. The WebSocket connection is kept open with regular pings implemented in the MarxanWebSocketHandler class.  
 
 To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There are already a few example subclasses of the MarxanWebSocketHandler class:  
 
@@ -128,6 +136,10 @@ To create WebSocket extensions, subclass the MarxanWebSocketHandler class. There
 - importFeatures - For importing features  
 - importGBIFData - For importing GBIF data  
 - updateWDPA - For updating the World Database of Protected Areas  
+- _reprocessProtectedAreas - For reprocessing all projects if the WDPA is updated  
+- createFeaturesFromWFS - For importing new features from Web Feature Services  
+- exportProject - For exporting a Marxan Web project to file.
+- importProject - For importing a Marxan Web project from a file.
 
 Follow these example classes to create your own WebSocket extensions.  
 
@@ -193,3 +205,4 @@ print(r2.json())
 \<TODO\>
 
 ## Linking desktop GIS to the Marxan database
+\<TODO\>
