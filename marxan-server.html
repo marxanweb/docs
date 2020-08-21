@@ -183,7 +183,7 @@ DICT_PAD = 25
 LOGGING_LEVEL = logging.INFO                
 &#34;&#34;&#34;Tornado logging level that controls what is logged to the console - options are logging.INFO, logging.DEBUG, logging.WARNING, logging.ERROR, logging.CRITICAL. All SQL statements can be logged by setting this to logging.DEBUG.&#34;&#34;&#34;
 
-#pdoc3 dict to whitelist private members
+#pdoc3 dict to whitelist private members for the documentation
 __pdoc__ = {}
 privateMembers = [&#39;_addParameter&#39;, &#39;_authenticate&#39;, &#39;_authoriseRole&#39;, &#39;_authoriseUser&#39;, &#39;_checkCORS&#39;, &#39;_checkZippedShapefile&#39;, &#39;_cleanup&#39;, &#39;_cloneProject&#39;, &#39;_copyDirectory&#39;, &#39;_createFeaturePreprocessingFileFromImport&#39;, &#39;_createProject&#39;, &#39;_createPuFile&#39;, &#39;_createUser&#39;, &#39;_createZipfile&#39;, &#39;_dataFrameContainsValue&#39;, &#39;_debugSQLStatement&#39;, &#39;_deleteAllFiles&#39;, &#39;_deleteArchiveFiles&#39;, &#39;_deleteCost&#39;, &#39;_deleteFeature&#39;, &#39;_deleteFeatureClass&#39;, &#39;_deletePlanningUnitGrid&#39;, &#39;_deleteProject&#39;, &#39;_deleteRecordsInTextFile&#39;, &#39;_deleteShutdownFile&#39;, &#39;_deleteTileset&#39;, &#39;_deleteZippedShapefile&#39;, &#39;_dismissNotification&#39;, &#39;_estimatePlanningUnitCount&#39;, &#39;_exportAndZipShapefile&#39;, &#39;_finishCreatingFeature&#39;, &#39;_finishImportingFeature&#39;, &#39;_getAllProjects&#39;, &#39;_getAllSpeciesData&#39;, &#39;_getBestSolution&#39;, &#39;_getCosts&#39;, &#39;_getDictValue&#39;, &#39;_getEndOfLine&#39;, &#39;_getExceptionLastLine&#39;, &#39;_getFeature&#39;, &#39;_getFilesInFolderRecursive&#39;, &#39;_getGML&#39;, &#39;_getIntArrayFromArg&#39;, &#39;_getKeyValue&#39;, &#39;_getKeyValuesFromFile&#39;, &#39;_getKeys&#39;, &#39;_getMBAT&#39;, &#39;_getMarxanLog&#39;, &#39;_getMissingValues&#39;, &#39;_getNotificationsData&#39;, &#39;_getNumberOfRunsCompleted&#39;, &#39;_getNumberOfRunsRequired&#39;, &#39;_getOutputFilename&#39;, &#39;_getOutputSummary&#39;, &#39;_getPlanningUnitGrids&#39;, &#39;_getPlanningUnitsCostData&#39;, &#39;_getPlanningUnitsData&#39;, &#39;_getProjectData&#39;, &#39;_getProjectInputData&#39;, &#39;_getProjectInputFilename&#39;, &#39;_getProjects&#39;, &#39;_getProjectsForFeature&#39;, &#39;_getProjectsForPlanningGrid&#39;, &#39;_getProjectsForUser&#39;, &#39;_getProtectedAreaIntersectionsData&#39;, &#39;_getPuvsprStats&#39;, &#39;_getRESTMethod&#39;, &#39;_getRunLogs&#39;, &#39;_getSafeProjectName&#39;, &#39;_getServerData&#39;, &#39;_getShapefileFieldNames&#39;, &#39;_getSimpleArguments&#39;, &#39;_getSolution&#39;, &#39;_getSpeciesData&#39;, &#39;_getSpeciesPreProcessingData&#39;, &#39;_getSummedSolution&#39;, &#39;_getUniqueFeatureclassName&#39;, &#39;_getUserData&#39;, &#39;_getUsers&#39;, &#39;_getUsersData&#39;, &#39;_get_free_space_mb&#39;, &#39;_guestUserEnabled&#39;, &#39;_importDataFrame&#39;, &#39;_importPlanningUnitGrid&#39;, &#39;_invalidateProtectedAreaIntersections&#39;, &#39;_isProjectRunning&#39;, &#39;_loadCSV&#39;, &#39;_normaliseDataFrame&#39;, &#39;_padDict&#39;, &#39;_preprocessProtectedAreas&#39;, &#39;_puidsArrayToPuDatFormat&#39;, &#39;_raiseError&#39;, &#39;_readFile&#39;, &#39;_readFileUnicode&#39;, &#39;_reprocessProtectedAreas&#39;, &#39;_requestIsWebSocket&#39;, &#39;_resetNotifications&#39;, &#39;_runCmd&#39;, &#39;_setCORS&#39;, &#39;_setFolderPaths&#39;, &#39;_setGlobalVariables&#39;, &#39;_shapefileHasField&#39;, &#39;_tilesetExists&#39;, &#39;_txtIntsToList&#39;, &#39;_unzipFile&#39;, &#39;_unzipShapefile&#39;, &#39;_updateCosts&#39;, &#39;_updateDataFrame&#39;, &#39;_updateParameters&#39;, &#39;_updatePuFile&#39;, &#39;_updateRunLog&#39;, &#39;_updateSpeciesFile&#39;, &#39;_uploadTileset&#39;, &#39;_uploadTilesetToMapbox&#39;, &#39;_validateArguments&#39;, &#39;_writeCSV&#39;, &#39;_writeFile&#39;, &#39;_writeFileUnicode&#39;, &#39;_writeToDatFile&#39;, &#39;_zipfolder&#39;]
 for m in privateMembers:
@@ -4498,7 +4498,7 @@ class createFeaturePreprocessingFileFromImport(MarxanRESTHandler): #not currentl
 
 #https://61c92e42cb1042699911c485c38d52ae.vfs.cloud9.eu-west-1.amazonaws.com:8081/marxan-server/addParameter?type=user&amp;key=REPORTUNITS&amp;value=Ha&amp;callback=__jp2
 class addParameter(MarxanRESTHandler):
-    &#34;&#34;&#34;REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: The required arguments in the request.arguments parameter are:  
+    &#34;&#34;&#34;REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: 
     Args:
         type (string): The type of configuration file to add the parameter to. One of server, user or project.  
         key (string): The key to create/update.  
@@ -5268,7 +5268,7 @@ class runMarxan(MarxanWebSocketHandler):
         user (string): The name of the user.  
         project (string): The name of the project to run.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;user&#34;: The name of the user,  
@@ -5411,7 +5411,7 @@ class importFeatures(MarxanWebSocketHandler):
         description (string): Optional. A description for the imported feature class.   
         splitfield (string): Optional. The name of the field to use to split the features in the shapefile into separate feature classes. The separate feature classes will have a name derived from the values in this field.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -5493,7 +5493,7 @@ class importGBIFData(MarxanWebSocketHandler):
         taxonKey (string): The GBIF taxon key for the feature.  
         scientificName (string): The GBIF scientific name for the feature.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -5671,7 +5671,7 @@ class createFeaturesFromWFS(MarxanWebSocketHandler):
         description (string): A description for the feature.  
         featuretype (string): The layer name within the WFS service representing the feature class to import.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -5727,7 +5727,7 @@ class exportProject(MarxanWebSocketHandler):
         user (string): The name of the user.  
         project (string): The name of the project to export.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the export process,  
@@ -5795,7 +5795,7 @@ class importProject(MarxanWebSocketHandler):
         description (string): A description for the imported project.  
         filename (string): The name of the *.mxw file (minus the .mxw extension).  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -5926,7 +5926,7 @@ class preprocessFeature(QueryWebSocketHandler):
         alias (string): The alias for the feature.  
         planning_grid_name (string): The name of the planning grid.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the preprocessing,  
@@ -5990,7 +5990,7 @@ class preprocessProtectedAreas(QueryWebSocketHandler):
         project (string): The name of the project.  
         planning_grid_name (string): The name of the planning grid.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on preprocessing,  
@@ -6023,7 +6023,7 @@ class reprocessProtectedAreas(QueryWebSocketHandler):
     Args:
         None  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -6053,7 +6053,7 @@ class preprocessPlanningUnits(QueryWebSocketHandler):
         user (string): The name of the user.  
         project (string): The name of the project.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -6098,7 +6098,7 @@ class createPlanningUnitGrid(QueryWebSocketHandler):
         areakm2 (string): The area of the planning grid in Km2.  
         shape (string): The shape of the planning grid units. One of square or hexagon.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -6148,7 +6148,7 @@ class runGapAnalysis(QueryWebSocketHandler):
         user (string): The name of the user.  
         project (string): The name of the project.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -6182,7 +6182,7 @@ class resetDatabase(QueryWebSocketHandler):
     Args:
         None  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress information on the database reset,  
@@ -6248,7 +6248,7 @@ class updateWDPA(QueryWebSocketHandler):
     Args:
         downloadUrl (string): The url endpoint where the new version of the WDPA can be downloaded from. This is normally set in the Marxan Registry. 
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress information on the update,  
@@ -13870,8 +13870,7 @@ Create new Popen instance.</p></div>
 <span>(</span><span>application: <a title="marxan-server.Application" href="#marxan-server.Application">Application</a>, request: tornado.httputil.HTTPServerRequest, **kwargs: Any)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: The required arguments in the request.arguments parameter are:
-</p>
+<div class="desc"><p>REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: </p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>type</code></strong> :&ensp;<code>string</code></dt>
@@ -13893,7 +13892,7 @@ Create new Popen instance.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class addParameter(MarxanRESTHandler):
-    &#34;&#34;&#34;REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: The required arguments in the request.arguments parameter are:  
+    &#34;&#34;&#34;REST HTTP handler. Creates a new parameter in a *.dat file, either the user (user.dat), project (project.dat) or server (server.dat), by iterating through all the files and adding the key/value if it doesnt already exist. The required arguments in the request.arguments parameter are: 
     Args:
         type (string): The type of configuration file to add the parameter to. One of server, user or project.  
         key (string): The key to create/update.  
@@ -14517,7 +14516,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the import process,<br>
@@ -14541,7 +14540,7 @@ Create new Popen instance.</p></div>
         description (string): A description for the feature.  
         featuretype (string): The layer name within the WFS service representing the feature class to import.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -14726,7 +14725,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Informational message,<br>
@@ -14749,7 +14748,7 @@ Create new Popen instance.</p></div>
         areakm2 (string): The area of the planning grid in Km2.  
         shape (string): The shape of the planning grid units. One of square or hexagon.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -16210,7 +16209,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the export process,<br>
@@ -16231,7 +16230,7 @@ Create new Popen instance.</p></div>
         user (string): The name of the user.  
         project (string): The name of the project to export.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the export process,  
@@ -18954,7 +18953,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the import process,<br>
@@ -18978,7 +18977,7 @@ Create new Popen instance.</p></div>
         description (string): Optional. A description for the imported feature class.   
         splitfield (string): Optional. The name of the field to use to split the features in the shapefile into separate feature classes. The separate feature classes will have a name derived from the values in this field.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -19088,7 +19087,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the import process,<br>
@@ -19109,7 +19108,7 @@ Create new Popen instance.</p></div>
         taxonKey (string): The GBIF taxon key for the feature.  
         scientificName (string): The GBIF scientific name for the feature.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -19637,7 +19636,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the import process,<br>
@@ -19657,7 +19656,7 @@ Create new Popen instance.</p></div>
         description (string): A description for the imported project.  
         filename (string): The name of the *.mxw file (minus the .mxw extension).  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the import process,  
@@ -20132,7 +20131,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on the preprocessing,<br>
@@ -20158,7 +20157,7 @@ Create new Popen instance.</p></div>
         alias (string): The alias for the feature.  
         planning_grid_name (string): The name of the planning grid.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on the preprocessing,  
@@ -20250,7 +20249,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Informational message,<br>
@@ -20268,7 +20267,7 @@ Create new Popen instance.</p></div>
         user (string): The name of the user.  
         project (string): The name of the project.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -20343,7 +20342,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress statements on preprocessing,<br>
@@ -20363,7 +20362,7 @@ Create new Popen instance.</p></div>
         project (string): The name of the project.  
         planning_grid_name (string): The name of the planning grid.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress statements on preprocessing,  
@@ -20522,7 +20521,7 @@ Create new Popen instance.</p></div>
 <p>None
 </p>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Informational message,<br>
@@ -20539,7 +20538,7 @@ Create new Popen instance.</p></div>
     Args:
         None  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -20663,7 +20662,7 @@ Create new Popen instance.</p></div>
 <p>None
 </p>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress information on the database reset,<br>
@@ -20680,7 +20679,7 @@ Create new Popen instance.</p></div>
     Args:
         None  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress information on the database reset,  
@@ -20856,7 +20855,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Informational message,<br>
@@ -20875,7 +20874,7 @@ Create new Popen instance.</p></div>
         user (string): The name of the user.  
         project (string): The name of the project.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Informational message,  
@@ -20940,7 +20939,7 @@ Create new Popen instance.</p></div>
 </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"user": The name of the user,<br>
@@ -20961,7 +20960,7 @@ Create new Popen instance.</p></div>
         user (string): The name of the user.  
         project (string): The name of the project to run.  
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;user&#34;: The name of the user,  
@@ -22429,7 +22428,7 @@ Create new Popen instance.</p></div>
 <dd>The url endpoint where the new version of the WDPA can be downloaded from. This is normally set in the Marxan Registry. </dd>
 </dl>
 <h2 id="returns">Returns</h2>
-<p>WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
+<p>WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an 'error' key/value pair):
 </p>
 <p>{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;"info": Contains detailed progress information on the update,<br>
@@ -22446,7 +22445,7 @@ Create new Popen instance.</p></div>
     Args:
         downloadUrl (string): The url endpoint where the new version of the WDPA can be downloaded from. This is normally set in the Marxan Registry. 
     Returns:
-        WebSocket dict messages with one or more the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
+        WebSocket dict messages with one or more of the following keys (if the class raises an exception, the error message is included in an &#39;error&#39; key/value pair):  
 
         {  
         &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&#34;info&#34;: Contains detailed progress information on the update,  
