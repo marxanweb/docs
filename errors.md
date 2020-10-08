@@ -27,6 +27,9 @@ Currently Marxan Web cannot create planning grids that span the meridian (at 180
 ## The zip file contains multiple shapefiles
 When uploading and importing zipped shapefiles, the zip files must only contain a single shapefile - i.e. a set of files all with the same name but with different extensions.  
 
+## The zipped shapefile contains additional unexpected files
+When uploading and importing zipped shapefiles, the zip file must only contain files of the following types otherwise the upload to Mapbox will fail: shp, dbf, shx, prj, sbx, sbn, xml, cpg.
+
 ## Not all planning units have been added
 When protected areas are intersected with the planning units in a project the results of that intersection are shown on the map as locked-in to the network. These planning units are outlined in blue. However, if the project already has some planning units that have been manually edited individually, these will be left as they are.  
 
