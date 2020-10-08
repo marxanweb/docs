@@ -27,7 +27,7 @@ Currently Marxan Web cannot create planning grids that span the meridian (at 180
 ## The zip file contains multiple shapefiles
 When uploading and importing zipped shapefiles, the zip files must only contain a single shapefile - i.e. a set of files all with the same name but with different extensions.  
 
-## The zipped shapefile contains additional unexpected files
+## Mapbox upload error
 When uploading and importing zipped shapefiles, the zip file must only contain files of the following types otherwise the upload to Mapbox will fail: shp, dbf, shx, prj, sbx, sbn, xml, cpg.
 
 ## Not all planning units have been added
