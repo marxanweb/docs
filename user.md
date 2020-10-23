@@ -301,7 +301,7 @@ The feature details window shows you all of the information for an individual fe
 All users can create new features using a number of different methods which are described below. In each case the process ends with the feature being uploaded to Mapbox so that it can be visualised in the map. For more information see [Uploading spatial data to Mapbox](#uploading-spatial-data-to-mapbox). In all of the import/create feature windows there is the option to add the new feature to the current project.   
 
 ##### Importing from a shapefile
-To upload existing spatial data from the local machine onto the server as new features use the import from shapefile window. This steps you through the process of imported single or multiple features.  
+To upload existing spatial data from the local machine onto the server as new features use the import from shapefile window. This steps you through the process of imported single or multiple features. Both polygons and point shapefiles can be imported, but point shapefiles must have a field called 'value' which contains the continuous variable that you are interested in.   
 
 - Click on the Import button and select From a shapefile. 
 - In the first step of the wizard, upload a zipped shapefile which contains the feature data that you want to import, then click next.  
@@ -377,7 +377,7 @@ Deleting features is only possible as an admin user and then only if the feature
 <img src='images/window_failed_to_delete_01.png' title='Failed to delete feature' class='docsImage'>
 
 ### Preprocessing features
-In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again.  
+In order for the features to be able to be used in Marxan, they have to be preprocessed by intersecting them with all of the planning units in the planning grid. This is necessary so that the algorithms know which features occur in which planning units. This process is done automatically in Marxan Web when a project is run for the first time, or if new features are added to a project. Once the preprocessing has started it cannot be stopped and once is has finished it does not need to be done again. For polygons, the features are intersected with the planning units and the total area within each planning unit is calculated. For points, the features are intersected with the planning units and the sum of all of the values in the 'value' field are calculated for each planning unit.   
 
 ### Feature properties window
 The Feature properties window shows information about the feature including its metadata, its spatial statistics and its protection in the currently selected solution (if no individual solution is selected then the statistics will relate to the last solution by default). To show the feature properties window, click on Properties in the features context menu. For more information see [Managing features within a project](#managing-features-within-a-project). 
