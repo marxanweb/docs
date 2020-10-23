@@ -513,7 +513,7 @@ You can now select and use the custom cost surface from the Cost surface drop-do
 Marxan Web uses protected areas information from the World Database of Protected Areas (WDPA) and the citation for the WDPA that is used is indicated in the Help | About window. The version of the WDPA that is in use depends on the version that is available in the Marxan Server and is shown in the Server Details window (see [Server Details](#server-details)) and at the bottom of the map (see also [Acknowledgements](#acknowledgements)). Future versions of Marxan Web will allow users to upload their own protected areas information if they want to be able to include protected areas that are not part of the WDPA, e.g. Other Effective Area-Based Conservation Measures such as Locally Managed Marine Areas.  
 
 #### Preprocessing protected areas
-Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab. 
+Preprocessing of protected areas is necessary to see how they intersect with the planning units. This only needs to be done once and at the end of the process the planning units which intersect with the protected areas >50% by area are shown with a blue border in the map. This indicates that they will be locked into the reserve network. The progress of this preprocessing can be seen in the Log tab. 
 
 If the WDPA is updated with new data then the intersection analysis between the protected areas and the planning units will need to be repeated.  
 
